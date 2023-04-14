@@ -3,7 +3,9 @@
     "listing": "/index.html",
     "items": [
       "/posts/post-with-code/index.html",
-      "/posts/welcome/index.html"
+      "/posts/welcome/index.html",
+      "/posts/foodies-guide-to-finding-a-home/index.html",
+      "/posts/me-earl-and-the-dying-girl/index.html"
     ]
   }
 ]
