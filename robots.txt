@@ -1,1 +1,1 @@
-Sitemap: git@github.com-isados:isados/alt-blog.git/sitemap.xml
+Sitemap: https://isados.github.io/alt-blog/sitemap.xml

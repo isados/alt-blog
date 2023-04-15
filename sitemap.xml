@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>git@github.com-isados:isados/alt-blog.git/posts/me-earl-and-the-dying-girl/index.html</loc>
-    <lastmod>2023-04-14T22:49:01.561Z</lastmod>
+    <loc>https://isados.github.io/alt-blog/blog.html</loc>
+    <lastmod>2023-04-15T17:49:07.532Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com-isados:isados/alt-blog.git/posts/post-with-code/index.html</loc>
-    <lastmod>2023-04-14T22:49:01.877Z</lastmod>
+    <loc>https://isados.github.io/alt-blog/quotes/index.html</loc>
+    <lastmod>2023-04-15T17:49:09.857Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com-isados:isados/alt-blog.git/posts/welcome/index.html</loc>
-    <lastmod>2023-04-14T22:49:02.173Z</lastmod>
+    <loc>https://isados.github.io/alt-blog/posts/me-earl-and-the-dying-girl/index.html</loc>
+    <lastmod>2023-04-15T17:49:10.225Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com-isados:isados/alt-blog.git/posts/foodies-guide-to-finding-a-home/index.html</loc>
-    <lastmod>2023-04-14T22:49:06.397Z</lastmod>
+    <loc>https://isados.github.io/alt-blog/posts/foodies-guide-to-finding-a-home/index.html</loc>
+    <lastmod>2023-04-15T17:49:14.196Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com-isados:isados/alt-blog.git/index.html</loc>
-    <lastmod>2023-04-14T22:49:07.021Z</lastmod>
-  </url>
-  <url>
-    <loc>git@github.com-isados:isados/alt-blog.git/about.html</loc>
-    <lastmod>2023-04-14T22:49:07.277Z</lastmod>
+    <loc>https://isados.github.io/alt-blog/index.html</loc>
+    <lastmod>2023-04-15T17:49:14.520Z</lastmod>
   </url>
 </urlset>

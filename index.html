@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>myblog</title>
+<title>Isa AlDoseri</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,17 +30,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -60,43 +57,16 @@ ul.task-list li input[type="checkbox"] {
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
+<meta property="og:title" content="Isa AlDoseri">
+<meta property="og:image" content="https://isados.github.io/alt-blog/avatar.jpeg">
+<meta property="og:site-name" content="Isa AlDoseri">
+<meta property="og:locale" content="en_US">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -104,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">myblog</span>
+    <span class="navbar-title">Isa AlDoseri</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -114,16 +84,20 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+ <span class="menu-text">About Me</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="./isados/alt-blog" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="./blog.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -135,191 +109,75 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">myblog</h1>
-                      </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ml">ml <span class="quarto-category-count">(1)</span></div><div class="category" data-category="movies">movies <span class="quarto-category-count">(1)</span></div><div class="category" data-category="news">news <span class="quarto-category-count">(2)</span></div><div class="category" data-category="sklearn">sklearn <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<div class="quarto-about-trestles page-columns page-full">
+  <div class="about-entity">
+    <img src="avatar.jpeg" class="about-image
+  rounded " style="width: 20em;">
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Isa AlDoseri</h1>
+</div>
+<div class="quarto-title-meta">
+  </div>
+</header>
+    <div class="about-links">
+  <a href="https://linkedin.com/in/isadoseri" class="about-link" rel="" target="">
+    <i class="bi bi-linkedin"></i>
+     <span class="about-link-text">LinkedIn</span>
+  </a>
+  <a href="https://github.com/isados" class="about-link" rel="" target="">
+    <i class="bi bi-github"></i>
+     <span class="about-link-text">GitHub</span>
+  </a>
+  <a href="mailto:isadosry+site@gmail.com" class="about-link" rel="" target="">
+     <span class="about-link-text">Email</span>
+  </a>
+  <a href="/blog.html" class="about-link" rel="" target="">
+     <span class="about-link-text">Blog</span>
+  </a>
+  <a href="/cv.pdf" class="about-link" rel="" target="">
+     <span class="about-link-text">CV</span>
+  </a>
+</div>
+  </div>
+  <div class="about-contents page-columns page-full"><main class="content page-columns page-full" id="quarto-document-content">
+<div class="column-page">
+<section id="bio" class="level2">
+<h2 data-anchor-id="bio">Bio</h2>
+<p>I’m a PhD candidate at SUNY-ESF, working on new tools to make complex, broad-scale systems easier for humans to understand. Right now, that means I split my time between predictive modeling (to <a href="https://cafri-ny.org/new-york-forest-carbon-assessment/">monitor forest carbon sequestration across New York State</a>, <a href="https://doi.org/10.1080/01431161.2022.2155086">track the development of early-successional forests</a>, and more) and visualization (including <a href="https://www.researchgate.net/profile/Richard-Smardon/publication/355972101_VRSC_2021_Conference_Proceedings_VRSC_2021_Conference_Proceedings/links/6186bf0e07be5f31b74fa3c1/VRSC-2021-Conference-Proceedings-VRSC-2021-Conference-Proceedings.pdf#page=74">using game engines as a GIS</a> and <a href="https://doi.org/10.21105/joss.04388">making it easier to make reproducible VR environments for research</a>). By training I’m either an ecologist (specializing in landscape and translational ecology) or environmental scientist; professionally, I’ve worked as a data analyst, software engineer, and chicken farmer.</p>
+<p>On this site I keep a list of <a href="papers">my publications</a>, <a href="talks">presentations</a>, and <a href="cv.pdf">my CV</a>, as well as a <a href="blog.html">technical blog</a>.</p>
+<p>
+</p>
+</section>
+<section id="selected-projects" class="level2">
+<h2 data-anchor-id="selected-projects">Selected Projects</h2>
+<section id="publications" class="level4">
+<h4 data-anchor-id="publications">Publications</h4>
+<p><strong>Filtering ground noise from LiDAR returns produces inferior models of forest aboveground biomass in heterogenous landscapes.</strong> Mahoney, MJ, Johnson, LK, Bevilacqua, E, and Beier, CM. 2022. GIScience &amp; Remote Sensing 59(1): 1266-1280. <a href="https://doi.org/10.1080/15481603.2022.2103069">https://doi.org/10.1080/15481603.2022.2103069</a></p>
+<p><strong>Classification and mapping of low-statured shrubland cover types in post-agricultural landscapes of the US Northeast.</strong> Mahoney, MJ, Johnson, LK, Guinan, AZ, and Beier, CM. 2022. International Journal of Remote Sensing 43(19-24): 7117-7138. <a href="https://doi.org/10.1080/01431161.2022.2155086">https://doi.org/10.1080/01431161.2022.2155086</a></p>
+<p><strong>unifir: A Unifying API for Interacting with Unity from R.</strong> Mahoney, MJ, Beier, CM, and Ackerman, AC. 2022. Journal of Open Source Software 7(73): 4388. <a href="https://doi.org/10.21105/joss.04388">https://doi.org/10.21105/joss.04388</a></p>
+<p><strong>terrainr: An R package for creating immersive virtual environments.</strong> Mahoney, MJ, Beier, CM, and Ackerman, AC. 2022. Journal of Open Source Software, 7(69): 4060. <a href="https://doi.org/10.21105/joss.04060">https://doi.org/10.21105/joss.04060</a></p>
+</section>
+<section id="r-packages" class="level4">
+<h4 data-anchor-id="r-packages">R Packages</h4>
+<p><strong><a href="https://mikemahoney218.github.io/waywiser/">waywiser</a></strong> | Ergonomic Methods for Assessing Spatial Models | 2023<br>
+<strong><a href="spatialsample.tidymodels.org/">spatialsample</a></strong> | Spatial Resampling Infrastructure | 2022<br>
+<strong><a href="https://github.com/mikemahoney218/unifir">unifir</a></strong> | A Unifying API for Working with Unity in R | 2022<br>
+<strong><a href="https://github.com/ropensci/terrainr">terrainr</a></strong> | Retrieve Data from the USGS National Map and Transform it for 3D Landscape Visualizations | 2021</p>
+</section>
+</section>
+</div>
+<p><link rel="me" href="https://fosstodon.org/@MikeMahoney218"></p>
 
 
-
-
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="news,code,analysis" data-listing-date-sort="1681419600000" data-listing-file-modified-sort="1681504676595" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/post-with-code/index.html"> <img src="./posts/post-with-code/image.jpg" class="thumbnail-image"> </a></p>
+</main></div>
 </div>
-<div class="body">
-<a href="./posts/post-with-code/index.html">
-<h3 class="no-anchor listing-title">
-Post With Code
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post-with-code/index.html">
-<div class="listing-description">
-This is a post with executable code.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/post-with-code/index.html">
-<div class="listing-date">
-Apr 14, 2023
-</div>
-<div class="listing-author">
-Harlow Malloc
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="news" data-listing-date-sort="1681160400000" data-listing-file-modified-sort="1681504676595" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="./posts/welcome/index.html"> <p class="card-img-top"><img src="posts/welcome/thumbnail.jpg"  class="thumbnail-image card-img"/></p> </a></p>
-</div>
-<div class="body">
-<a href="./posts/welcome/index.html">
-<h3 class="no-anchor listing-title">
-Welcome To My Blog
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('news'); return false;">
-news
-</div>
-</div>
-<a href="./posts/welcome/index.html">
-<div class="listing-description">
-This is the first post in a Quarto blog. Welcome!
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/welcome/index.html">
-<div class="listing-date">
-Apr 11, 2023
-</div>
-<div class="listing-author">
-Tristan O’Malley
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="ml,sklearn" data-listing-date-sort="1631221200000" data-listing-file-modified-sort="1681512387232" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8">
-<div class="thumbnail">
-<p><a href="./posts/foodies-guide-to-finding-a-home/index.html"> <img src="./posts/foodies-guide-to-finding-a-home/image.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/foodies-guide-to-finding-a-home/index.html">
-<h3 class="no-anchor listing-title">
-Foodie’s Guide to Finding a Home in Bahrain
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ml'); return false;">
-ml
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('sklearn'); return false;">
-sklearn
-</div>
-</div>
-<a href="./posts/foodies-guide-to-finding-a-home/index.html">
-<div class="listing-description">
-<p>By clustering neighborhoods based on popular venues surrounding them</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/foodies-guide-to-finding-a-home/index.html">
-<div class="listing-date">
-Sep 10, 2021
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="movies" data-listing-date-sort="1561582800000" data-listing-file-modified-sort="1681506671493" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
-<div class="thumbnail">
-<p><a href="./posts/me-earl-and-the-dying-girl/index.html"> <img src="./posts/me-earl-and-the-dying-girl/earl.jpeg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/me-earl-and-the-dying-girl/index.html">
-<h3 class="no-anchor listing-title">
-Me and Earl and the Dying Girl (and myself)
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('movies'); return false;">
-movies
-</div>
-</div>
-<a href="./posts/me-earl-and-the-dying-girl/index.html">
-<div class="listing-description">
-<p>A movie review that I watched during a rough time in my life.</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/me-earl-and-the-dying-girl/index.html">
-<div class="listing-date">
-Jun 27, 2019
-</div>
-<div class="listing-author">
-Isa AlDoseri
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -340,13 +198,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -554,6 +405,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2022 Isa AlDoseri. Except where otherwise noted, all text and images licensed CC-BY-NC 4.0.</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 
