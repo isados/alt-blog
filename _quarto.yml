@@ -1,19 +1,40 @@
 project:
   type: website
+  resources:
+    - keybase.txt
+    - resume.pdf
+    - cv.pdf
 
 website:
-  title: "myblog"
+  title: "Isa AlDoseri"
+  site-url: https://isados.github.io/alt-blog/
+  description: "A Fun Tomorrow"
+  open-graph:
+    locale: en_US
+  # twitter-card:
+  #   creator: "@MikeMahoney218"
+  comments:
+    utterances:
+      repo: isados/alt-blog
   navbar:
     right:
-      - about.qmd
+      - text: "About Me"
+        href: index.html
+      # - text: "Experience"
+      #   href: papers
+      # - text: "Presentations"
+      #   href: presentations
+      # - text: "Software citations"
+      #   href: software_citations.html
+      - text: "Blog"
+        href: blog.html
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: isados/alt-blog
+      - icon: rss
+        href: blog.xml
+  page-footer:
+    left: "© Copyright 2022 Isa AlDoseri. Except where otherwise noted, all text and images licensed CC-BY-NC 4.0."
 format:
   html:
-    theme: cosmo
+    theme: [sandstone, _variables.scss]
     css: styles.css
-
-
-
