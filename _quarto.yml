@@ -17,6 +17,7 @@ website:
     utterances:
       repo: isados/alt-blog
   navbar:
+    # background: "#A7D5E8"
     right:
       - text: "About Me"
         href: index.html
@@ -38,3 +39,4 @@ format:
   html:
     theme: [sandstone, _variables.scss]
     css: styles.css
+    # mainfont: "Atkinson Hyperlegible"

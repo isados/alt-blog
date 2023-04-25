@@ -1,6 +1,6 @@
 ---
 title: "Isa AlDoseri"
-image: avatar.jpeg
+image: photo.jpeg
 about:
   template: trestles
   links:
@@ -23,21 +23,14 @@ comments: false
 ---
 ::: {.column-page}
 
-## Bio
+<span><h1>Isa AlDoseri</h1> <h4>Software Engineer</h4></span>
 
-I’m a PhD candidate at SUNY-ESF, working on new tools to make complex, 
-broad-scale systems easier for humans to understand. 
-Right now, that means I split my time between predictive modeling
-(to [monitor forest carbon sequestration across New York State](https://cafri-ny.org/new-york-forest-carbon-assessment/), 
-[track the development of early-successional forests](https://doi.org/10.1080/01431161.2022.2155086), 
-and more) and visualization (including
-[using game engines as a GIS](https://www.researchgate.net/profile/Richard-Smardon/publication/355972101_VRSC_2021_Conference_Proceedings_VRSC_2021_Conference_Proceedings/links/6186bf0e07be5f31b74fa3c1/VRSC-2021-Conference-Proceedings-VRSC-2021-Conference-Proceedings.pdf#page=74) and
-[making it easier to make reproducible VR environments for research](https://doi.org/10.21105/joss.04388)).
-By training I'm either an ecologist (specializing in landscape and 
-translational ecology) or environmental scientist; professionally, I've worked
-as a data analyst, software engineer, and chicken farmer.
 
-On this site I keep a list of [my publications](papers), [presentations](talks), 
+Isa AlDoseri is a skilled software engineer with 4+ years of experience in data science, data visualization, machine learning, and Python automation. He completed his electronics and communication engineering from AIT, Bangalore, where he honed his programming and data analysis skills. Isa has experience implementing machine learning algorithms to solve complex business problems and is proficient in Python, Rust, SQL, AWS, and Heroku. He's a great communicator, team player, and mentor who's taught at Gomycode as an AI instructor. 
+
+Isa is interested in IoT technology, has won the ML Olympiad conducted by GDG Manama twice this year, and enjoys automating repetitive tasks. Isa is also a proud parent of a kitten named Apollo, who brings joy to his life. He loves listening to rock music from the 90s, travelling to new countries, doing cross-fit, reading non-fiction, and attending stand-up comedy shows. He's committed to sharing his knowledge and experience in machine learning, data science, automation (and moview reviews) through his blog, attending conferences and workshops, and staying up-to-date with the latest technology developments.
+
+On this site you can find a list of [my publications](papers), [presentations](talks), 
 and [my CV](cv.pdf), as well as a [technical blog](blog.html).
 
 <p></p>
