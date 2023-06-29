@@ -15,26 +15,26 @@ website:
   #   creator: "@MikeMahoney218"
   comments:
     utterances:
-      repo: isados/alt-blog
+      repo: isados/blog
   navbar:
     # background: "#A7D5E8"
     right:
       - text: "About Me"
         href: index.html
-      # - text: "Experience"
-      #   href: papers
       # - text: "Presentations"
       #   href: presentations
       # - text: "Software citations"
       #   href: software_citations.html
       - text: "Blog"
         href: blog.html
+      - text: "Papers"
+        href: papers
       - icon: github
-        href: isados/alt-blog
+        href: isados/blog
       - icon: rss
         href: blog.xml
   page-footer:
-    left: "© Copyright 2022 Isa AlDoseri. Except where otherwise noted, all text and images licensed CC-BY-NC 4.0."
+    left: "© Copyright 2023 Isa AlDoseri. Except where otherwise noted, all text and images licensed CC-BY-NC 4.0."
 format:
   html:
     theme: [sandstone, _variables.scss]
