@@ -13,9 +13,9 @@ about:
     - text: Email
       url: "mailto:isadosry+site@gmail.com"
     - text: Blog
-      href: /blog.html
+      href: blog/blog.html
     - text: Resume
-      href: ./resume.pdf
+      href: blog/resume.pdf
 comments: false
 ---
 ::: {.column-page}
@@ -41,5 +41,3 @@ On this site you will find his [technical blog](blog.html), his [resume](resume.
 <!-- #### Python Packages -->
 
 :::
-
-<link rel="me" href="https://fosstodon.org/@MikeMahoney218">

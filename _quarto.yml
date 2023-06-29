@@ -7,11 +7,10 @@ project:
 website:
   title: "Isa AlDoseri"
   site-url: https://isados.github.io/blog/
+  site-path: https://isados.github.io/blog/
   description: "A Fun Tomorrow"
   open-graph:
     locale: en_US
-  # twitter-card:
-  #   creator: "@MikeMahoney218"
   comments:
     utterances:
       repo: isados/blog
@@ -20,10 +19,6 @@ website:
     right:
       - text: "About Me"
         href: index.html
-      # - text: "Presentations"
-      #   href: presentations
-      # - text: "Software citations"
-      #   href: software_citations.html
       - text: "Blog"
         href: blog.html
       - text: "Papers"
