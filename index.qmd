@@ -13,9 +13,9 @@ about:
     - text: Email
       url: "mailto:isadosry+site@gmail.com"
     - text: Blog
-      href: "blog.html"
+      href: blog.html
     - text: Resume
-      href: "resume.pdf"
+      href: resume.pdf
 comments: false
 ---
 ::: {.column-page}
