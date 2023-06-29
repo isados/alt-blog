@@ -1,6 +1,7 @@
 ---
 title: "Isa AlDoseri"
 image: photo.jpeg
+site-url: https://isados.github.io/blog/
 about:
   template: trestles
   links:
