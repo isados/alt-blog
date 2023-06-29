@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Isa AlDoseri</title>
-<link>https://isados.github.io/alt-blog/blog.html</link>
-<atom:link href="https://isados.github.io/alt-blog/blog.xml" rel="self" type="application/rss+xml"/>
+<link>https://isados.github.io/blog/blog.html</link>
+<atom:link href="https://isados.github.io/blog/blog.xml" rel="self" type="application/rss+xml"/>
 <description>A Fun Tomorrow</description>
 <generator>quarto-1.3.319</generator>
 <lastBuildDate>Thu, 09 Sep 2021 21:00:00 GMT</lastBuildDate>
 <item>
   <title>Foodie’s Guide to Finding a Home in Bahrain</title>
-  <link>https://isados.github.io/alt-blog/posts/foodies-guide-to-finding-a-home/index.html</link>
+  <link>https://isados.github.io/blog/posts/foodies-guide-to-finding-a-home/index.html</link>
   <description><![CDATA[ 
 
 
@@ -5975,7 +5975,7 @@ font-style: inherit;">1</span>]))]]</span>
 </section>
 <section id="conclusion" class="level3">
 <h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
-<p>Phew! We’re done with finding our clusters, and finding out which areas fall into it. To understand the constraints and my discussion to conclude this solution, please refer to my report available on my <a href="https://github.com/isados/neighborhood-clusters/blob/main/report.md">github repo</a>.</p>
+<p>Phew! We’re done with finding our clusters, and finding out which areas fall into it. To understand the constraints and my discussion to conclude this solution, please refer to my report available on my <a href="https://github.com/isados/neighborhood-clusters/blob/main/README.md">github repo</a>, where you will find the datasets I’ve used :D</p>
 <p>I hope you’ve enjoyed reading &amp; learning something new from this post. Doing this was part of my data-science course, and I hope you can do the same with your hobby projects.</p>
 <p>Until next time, cheers!</p>
 
@@ -5986,14 +5986,14 @@ font-style: inherit;">1</span>]))]]</span>
  ]]></description>
   <category>ml</category>
   <category>sklearn</category>
-  <guid>https://isados.github.io/alt-blog/posts/foodies-guide-to-finding-a-home/index.html</guid>
+  <guid>https://isados.github.io/blog/posts/foodies-guide-to-finding-a-home/index.html</guid>
   <pubDate>Thu, 09 Sep 2021 21:00:00 GMT</pubDate>
-  <media:content url="https://isados.github.io/alt-blog/posts/foodies-guide-to-finding-a-home/image.jpg" medium="image" type="image/jpeg"/>
+  <media:content url="https://isados.github.io/blog/posts/foodies-guide-to-finding-a-home/image.jpg" medium="image" type="image/jpeg"/>
 </item>
 <item>
   <title>Me and Earl and the Dying Girl (and myself)</title>
   <dc:creator>Isa AlDoseri</dc:creator>
-  <link>https://isados.github.io/alt-blog/posts/me-earl-and-the-dying-girl/index.html</link>
+  <link>https://isados.github.io/blog/posts/me-earl-and-the-dying-girl/index.html</link>
   <description><![CDATA[ 
 
 
@@ -6022,9 +6022,9 @@ font-style: inherit;">1</span>]))]]</span>
 
  ]]></description>
   <category>movies</category>
-  <guid>https://isados.github.io/alt-blog/posts/me-earl-and-the-dying-girl/index.html</guid>
+  <guid>https://isados.github.io/blog/posts/me-earl-and-the-dying-girl/index.html</guid>
   <pubDate>Wed, 26 Jun 2019 21:00:00 GMT</pubDate>
-  <media:content url="https://isados.github.io/alt-blog/posts/me-earl-and-the-dying-girl/earl.jpeg" medium="image" type="image/jpeg"/>
+  <media:content url="https://isados.github.io/blog/posts/me-earl-and-the-dying-girl/earl.jpeg" medium="image" type="image/jpeg"/>
 </item>
 </channel>
 </rss>
