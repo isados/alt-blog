@@ -122,3 +122,5 @@ dist
 *.tif
 elevators.db
 _site
+
+.ignored_stuff
