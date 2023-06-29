@@ -7,18 +7,15 @@ about:
     - text: LinkedIn
       icon: linkedin
       url: "https://linkedin.com/in/isadoseri"
-    # - text: Mastodon
-    #   icon: mastodon
-    #   url: "https://fosstodon.org/@MikeMahoney218"
     - text: GitHub
       icon: github
       url: "https://github.com/isados"
     - text: Email
       url: "mailto:isadosry+site@gmail.com"
     - text: Blog
-      url: "blog.html"
+      href: "blog.html"
     - text: Resume
-      url: "resume.pdf"
+      href: "resume.pdf"
 comments: false
 ---
 ::: {.column-page}

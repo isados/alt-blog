@@ -29,7 +29,7 @@ website:
       - text: "Papers"
         href: papers
       - icon: github
-        href: isados/blog
+        url: https://github.com/isados/blog
       - icon: rss
         href: blog.xml
   page-footer:
