@@ -5,6 +5,6 @@
     Click "[PDF]" to download each paper.
     <hr>
     <h3>2018</h3>
-    <p>Sumanth Krishna, **Isa AlDoseri**, Srujana 2018, Acharya Institure of Technology: Breast Cancer Detection using Deep Learning [[PDF]](breast-cancer-paper.pdf)</p>
+    <p>Sumanth Krishna, **Isa AlDoseri**, Srujana 2018, Acharya Institute of Technology: Breast Cancer Detection using Image Processing and Deep Learning Architecture [[PDF]](breast-cancer-paper.pdf)</p>
 </body>
 </html>

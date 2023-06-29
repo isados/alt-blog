@@ -3,7 +3,6 @@ project:
   resources:
     - keybase.txt
     - resume.pdf
-    - cv.pdf
 
 website:
   title: "Isa AlDoseri"

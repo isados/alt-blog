@@ -17,8 +17,8 @@ about:
       url: "mailto:isadosry+site@gmail.com"
     - text: Blog
       url: "blog.html"
-    - text: CV
-      url: "cv.pdf"
+    - text: Resume
+      url: "resume.pdf"
 comments: false
 ---
 ::: {.column-page}
@@ -30,16 +30,14 @@ Isa AlDoseri is a skilled software engineer with 4+ years of experience in data 
 
 Isa is interested in IoT technology, has won the ML Olympiad conducted by GDG Manama twice this year, and enjoys automating repetitive tasks. Isa is also a proud parent of a kitten named Apollo, who brings joy to his life. He loves listening to rock music from the 90s, travelling to new countries, doing cross-fit, reading non-fiction, and attending stand-up comedy shows. He's committed to sharing his knowledge and experience in machine learning, data science, automation (and moview reviews) through his blog, attending conferences and workshops, and staying up-to-date with the latest technology developments.
 
-On this site you can find a list of [my publications](papers), [presentations](talks), 
-and [my CV](cv.pdf), as well as a [technical blog](blog.html).
-
+On this site you will find his [technical blog](blog.html), his [resume](resume.pdf) and a list of [publications](papers).
 <p></p>
 
 ## Selected Projects
 
 #### Publications
 
-**Breast Cancer Detection using Deep Learning**: Sumanth Krishna, Isa AlDoseri, Srujana 2018; Acharya Institure of Technology [[PDF]](/papers/breast-cancer-paper.pdf)</p>
+**Breast Cancer Detection using Image Processing and Deep Learning Architecture**: Sumanth Krishna, Isa AlDoseri, Srujana 2018; Acharya Institute of Technology [[PDF]](/papers/breast-cancer-paper.pdf)</p>
 
 <!-- **Classification and mapping of low-statured shrubland cover types in post-agricultural landscapes of the US Northeast.** Mahoney, MJ, Johnson, LK, Guinan, AZ, and Beier, CM. 2022. International Journal of Remote Sensing 43(19-24): 7117-7138. [https://doi.org/10.1080/01431161.2022.2155086](https://doi.org/10.1080/01431161.2022.2155086) -->
 
