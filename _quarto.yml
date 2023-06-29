@@ -6,7 +6,7 @@ project:
 
 website:
   title: "Isa AlDoseri"
-  site-url: https://isados.github.io/alt-blog/
+  site-url: https://isados.github.io/blog/
   description: "A Fun Tomorrow"
   open-graph:
     locale: en_US
