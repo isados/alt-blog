@@ -1,0 +1,19 @@
+---
+comments: false
+---
+
+1st Place (Twice) at GDG Manama ML Olympiad 2023
+Issued by GDG Manama | Kerne · Mar 2023
+There were 5 Kaggle competitions that each had an industry dataset to solve. Won 2-out-of-5 of the competitions @ 1st Place.
+
+*Competitions*
+[National Cyber Security Center](https://tinyurl.com/MLBahrainNCSC)
+[Bahrain RCSI](https://tinyurl.com/MLBahrainRCSI)
+
+
+
+Most Iconic Project Collaboration Award
+Issued by AIESEC in Bahrain · Sep 2020
+
+Associated with AIESEC
+For a project called Ebtikar which reached national exposure in the Kingdom of Bahrain and was able to deliver innovative solutions towards the fight against climate change, under the United Nations Sustainable Development Goal # 13 on Climate Action

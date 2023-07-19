@@ -86,4 +86,53 @@ and Computers aimed at kids and young adults.
 
 ### Until 2013
 #### Al Noor International School
+
+## Projects
+
+### Technology
+
+### Social
+#### AIESEC in Bahrain : Ebtikar
+##### Jul 2020 - Aug 2020
+Under The Patronage of H.E. the President of Sustainable Energy Authority, Ebtikar is a program where participants prepare, compete and learn more about renewable energy and climate change. And they do so in teams where they will compete for the best idea.
+
+[Show Project 🔥](https://www.instagram.com/p/CDd9O-4gu-9/)
+
+
+Realtime 2D Pose Estimation GUI with OpenPose
+Feb 2019
+Associated with The Hive Bahrain
+
+Successfully built a user interface for label recognition on top of a pose estimation algorithm to compete in Mashro3i 2019.
+
+[Show Project 🔥](https://github.com/isados/openpose-gui)
+
+
+Remote Control Car with M5Stack Wristwatch
+Jan 2019 - Jan 2019
+Associated with The Hive Bahrain
+
+Building a simple remote control kit to educate kids & young adults on the basics of IoT during a workshop at Brinc IoT Building
+
+
+Breast Cancer Screening using Keras
+Jan 2018 - Jun 2018
+Associated with Acharya Institutes
+Final year team project on distinguishing forms of breast cancer using a Keras, a deep learning framework.
+Compiled a report on the study, and worked on it while interning at a Data Science startup.
+[Show Project 🔥](https://github.com/isados/breast-cancer-screening)
+Contributors: Sumanth Krishna, Srujana
+
+
+AIESEC EXPA Assistant Tool
+Developed an automation tool using Python Selenium to scrap data from the AIESEC Management Site to update our CRM workspace.
+
+## Licenses & Certifications
+
+::: {.morelinespace}
+- IBM Data Science Professional Certificate | Coursera | Issued Aug 2021
+- Tableau Essential Training (2020.1) | LinkedIn Learning ⋅ Course Certificate | Issued Jan 2021
+- Cisco Certified Network Associate Routing and Switching (CCNA) | Cisco | Issued Oct 2020 · Expires Oct 2023
+:::
+
 :::

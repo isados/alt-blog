@@ -21,7 +21,7 @@ website:
         href: index.html
       - text: "Blog"
         href: blog.html
-      - text: "CV"
+      - text: "Experience"
         href: cv.html
       - text: "Papers"
         href: papers
