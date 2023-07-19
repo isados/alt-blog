@@ -23,6 +23,8 @@ website:
         href: blog.html
       - text: "Experience"
         href: cv.html
+      - text: Awards
+        href: awards.html
       - text: "Papers"
         href: papers
       - icon: github

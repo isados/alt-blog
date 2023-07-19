@@ -13,6 +13,10 @@ comments: false
 ##### Aug 2021 - **Present**
 
 Building the IT infrastructure of the company, and furthering its growth in the GCC.
+- Orchestrated & Developing Odoo modules, expanded
+- Reduced the orders cancellation with Instashop by 34% and automated the task of stock count collection, eliminating manual labor
+- Organized and developer several data migration projects for our database to ensure smooth transition
+- Managed technical capacity building for HR, Accounting, Sales & Inventory Departments
 
 #### ML Engineer & Associate Business Manager (Remote)
 ##### plantOS W.L.L, Malaysia & Bahrain
