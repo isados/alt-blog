@@ -3,3 +3,17 @@
 .nav-item {
     color: #000;
 }
+.resume h3 {
+    color: #888;
+}
+.resume h4 {
+    font-weight: bold;
+}
+.resume h5 {
+    margin-top:0.25em;
+    font-size:1em;
+    color: #616060;
+}
+.resume .morelinespace li{
+    margin-top: 0.5em;
+}
