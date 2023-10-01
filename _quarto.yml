@@ -22,7 +22,7 @@ website:
       - text: "Blog"
         href: blog.html
       - text: "Experience"
-        href: cv.html
+        href: CV.html
       - text: Awards
         href: awards.html
       - text: "Papers"

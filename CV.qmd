@@ -1,0 +1,194 @@
+---
+toc: true
+toc-location: left
+comments: false
+---
+
+::: {.resumec}
+# Curriculum Vitae
+## Work Experience
+### Present
+#### System Analyst
+##### Pet Arabia Co. W.L.L , Bahrain
+##### Aug 2021 - **Present**
+
+- Roles
+    - Spearheading the IT infrastructure of the company and coordinating with stakeholders, to further its growth in the GCC.
+    - Orchestrating & Developing systems on our ERP (Odoo v14), which includes outsourcing most of that development.
+    - Operate as a Full-Stack developer (+ Odoo Developer).
+    - Optimizing IT Processes to Achieve Max Efficiency & documenting said processes.
+    - Offer Capacity Building & Training on New processes.
+
+- Achievements
+    - Increased Sales by reducing orders cancellations with **Instashop by 34%** by building a Real-time Stock API Integration, eliminating merchandisers labor
+    - Organized, instructed and developed several data migration projects to ensure smooth transition using **pandas, SQL, and python-odoo modules**. Examples include, our entire inventory and stock valuation, our ecommerce site https://petarabia.com
+    - Managed **multiple technical capacity** building session for HR, Accounting, Sales & Inventory Departments in the form of in-person meetings and/or videos.
+    - Succeeded in building a Tap-to-Pay system for recurring payments as part of Pet Arabia's Bath Club Membership service using *Flutter & Python-Flask*. First of its kind.
+    - Flutter App for Attendance Tracking.
+
+
+#### ML Engineer & Associate Business Manager (Remote)
+##### plantOS W.L.L, Malaysia & Bahrain
+##### Oct 2019 - **Present**
+- Roles
+    - Developing ML algorithms to derive insights on accelerating yield for farmers, and eliminating diseases that plague them.
+    - Growing the agri-tech business in the GCC by securing sales meetings in&out of Bahrain, to build a strong base for the company.
+- Achievements
+    - Incorporated an experimental version of the yield prediction algorithm as part of the plantOS application using **Sci-Kit Learn**.
+    - Developed Fruit Object Detection algorithm using **PyTorch (Fast Mask-RCNN model used)** to showcase to the Ministry of Agriculture in Malaysia.
+
+### 2021
+#### AI Instructor (Hybrid & Part-Time)
+##### Go My Code, Bahrain
+##### Mar 2021 - Feb 2022
+- Act as part-time coach & influencer to individuals interested in switching to a Data Science career, by having them go through a 3-month program and shipping a product by the end of it.
+- Each batch runs for a minimum 3 months
+- Achievements
+    - Successfully ran 3 batches back-to-back with a total of 8 students.
+    - Secured 7 successful capstone data-science projects with the students.
+
+
+#### Machine Learning Engineer
+##### HakTrakNetworks, Bahrain
+##### May 2021 - Jul 2021
+
+###### Roles
+- As a data science/software engineer 
+- Spearheading the ML capabilities for the startup in the field of Cyber Security by leveraging my experience in software development.
+Achievements
+- Our team successfully built and operated an intrusion detection system to prevent cyber attacks, within headquarters.
+
+Researched & Developed machine learning applications to evade and mitigate small-scale cyber attacks with Sci-Kit Learn & Pandas. Early Stage Development.
+
+Succeeded in developing a prototype intrusion detection system for the company within a month of joining. 
+
+### 2020
+#### Regional Support Manager
+Regional Support Manager @ Middle East & Africa
+AIESEC International | Apr 2020 - Jul 2022
+
+Developed & maintained dashboards & data structures with the Regional Team of AIESEC International to track performance growth for members in 28 countries; concretely & transparently.
+Coached Vice Presidents and Team Leaders on the use of the dashboard tool.
+#### National Support Manager | Information Management
+##### AIESEC in Bahrain
+##### Apr 2020 - Jan 2021
+- Developed dashboards & data structures with the National Team of AIESEC in Bahrain to track performance and potential growth of the entity more transparently.
+  
+Developed & maintained dashboards & data structures with the National Team of AIESEC in Bahrain to track performance growth of the whole entity concretely & transparently.
+Coached Vice Presidents and Team Leaders on the use of our data management tools.
+
+
+#### Local Chapter Vice President | Project Management
+##### AIESEC in Bahrain
+##### Feb 2020 - Jan 2021
+VP of a local chapter for AIESEC in Bahrain. Leading a department to create projects that deliver social impact in the country under the United Nations Sustainable Development Goals.
+
+Executed 10 social impact projects from start to finish.
+
+Achieved 6 social impact projects from start to finish.
+Collaborated with multiple stakeholders as partners.
+Drove measurable impact towards the United Nations Sustainable Development Goals.
+Created dashboards for performance and potential growth tracking, across AIESEC in Bahrain.
+
+### 2019
+#### Team Leader | Incoming Global Exchange Program
+##### AIESEC in Bahrain
+##### Feb 2019 - Feb 2020
+- Managed teams within the Global Exchange products to connect a group of diverse & talented individuals from around the globe to startups & NGOs in the Kingdom of Bahrain to take on internships, and delivering life-changing experiences in the process.
+
+#### Game Instructor (Part-time)
+##### Cleverplay, Bahrain
+##### May 2019 - Jun 2019
+- Taught kids from years 2-5 and introduced them to world-building using Minecraft at St. Christopher's Primary School.
+
+### 2018
+#### Information Technology Officer 
+##### The Hive, Bahrain
+##### Nov 2018 - Feb 2019
+
+- Worked as a Software Developer. Managed and developed tutorials on Basic Electronics
+and Computers aimed at kids and young adults. 
+- Accomplishments include --->
+    - Further developed a motion tracking software using pose estimation for clients to
+    compete in **Mashro3i 2019**.
+    - Conducted a Basic Computer workshop for a primary school in Karzakan, Bahrain
+
+Developed tutorials on Basic Electronics and Computers aimed at kids and young adults.
+Developed a motion tracking software using pose estimation for clients to compete in Mashro3i 2019
+
+#### Machine Learning Intern
+##### Suprath Technologies Private Limited, Bangalore, India
+##### Jan 2018 - May 2018
+- Interned at a Data Science Startup on Customer Care Support.
+- Succeeded in creating a sentence generation tool along with a dialog script for a chat-bot using Natural Language Processing to resolve chat queries.
+
+ [Recommendation Letter 🔥]()
+
+## Education
+### 2018
+#### B.E. in Electronics & Communication
+##### Acharya Institute of Technology, Bangalore, India
+##### Aug 2014 - Jul 2018
+what did i study here
+Graduated; First Class with Distinction.
+Researched on deep learning using Keras API to distinguish between different breast cancers.
+Interned at a Machine Learning startup
+- Activities and societies: Member of Nature Watch (2016-2018)
+- Voracious Quizzer
+
+### Until 2013
+
+#### Cambridge AS & A-Levels
+##### Al Noor International School, Bahrain
+- Studied Physics, Math & Computer Science.
+- Honored with a GPA of 3.1 
+- Built an invoicing system for a laundry shop using VB.NET as part of my final year
+## Projects
+
+### Technology
+
+### Social
+#### AIESEC in Bahrain : Ebtikar
+##### Jul 2020 - Aug 2020
+Under The Patronage of H.E. the President of Sustainable Energy Authority, Ebtikar is a program where participants prepare, compete and learn more about renewable energy and climate change. And they do so in teams where they will compete for the best idea.
+
+[Show Project 🔥](https://www.instagram.com/p/CDd9O-4gu-9/)
+
+
+Realtime 2D Pose Estimation GUI with OpenPose
+Feb 2019
+Associated with The Hive Bahrain
+
+Successfully built a user interface for label recognition on top of a pose estimation algorithm to compete in Mashro3i 2019.
+
+[Show Project 🔥](https://github.com/isados/openpose-gui)
+
+
+Remote Control Car with M5Stack Wristwatch
+Jan 2019 - Jan 2019
+Associated with The Hive Bahrain
+
+Building a simple remote control kit to educate kids & young adults on the basics of IoT during a workshop at Brinc IoT Building
+
+
+Breast Cancer Screening using Keras
+Jan 2018 - Jun 2018
+Associated with Acharya Institutes
+Final year team project on distinguishing forms of breast cancer using a Keras, a deep learning framework.
+Compiled a report on the study, and worked on it while interning at a Data Science startup.
+[Show Project 🔥](https://github.com/isados/breast-cancer-screening)
+Contributors: Sumanth Krishna, Srujana
+
+
+AIESEC EXPA Assistant Tool
+Developed an automation tool using Python Selenium to scrap data from the AIESEC Management Site to update our CRM workspace.
+
+## Licenses & Certifications
+
+::: {.morelinespace}
+- IBM Data Science Professional Certificate | Coursera | Issued Aug 2021
+- Tableau Essential Training (2020.1) | LinkedIn Learning ⋅ Course Certificate | Issued Jan 2021
+- Cisco Certified Network Associate Routing and Switching (CCNA) | Cisco | Issued Oct 2020 · Expires Oct 2023
+:::
+
+:::
