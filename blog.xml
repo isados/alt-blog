@@ -32,6 +32,8 @@
 <section id="import-packages-setup" class="level2">
 <h2 class="anchored" data-anchor-id="import-packages-setup">Import Packages &amp; Setup</h2>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-27T20:41:02.412391Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-27T20:41:02.412040Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-27T20:41:03.264253Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-27T20:41:03.263200Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-27T20:41:02.412363Z&quot;}" data-trusted="true" data-execution_count="1">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># IMPORT PACKAGES</span></span>
@@ -67,8 +69,11 @@ background-color: null;
 font-style: inherit;">from</span> pathlib <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> Path</span></code></pre></div>
+</details>
 </div>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-27T20:41:00.348092Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-27T20:41:00.347579Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-27T20:41:00.353576Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-27T20:41:00.352276Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-27T20:41:00.348060Z&quot;}" data-trusted="true" data-execution_count="2">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># For the Kaggle Environment, please uncomment below</span></span>
@@ -83,11 +88,14 @@ background-color: null;
 font-style: inherit;">=</span> Path(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'data/'</span>)</span></code></pre></div>
+</details>
 </div>
 </section>
 <section id="load-target-variables-solar-wind-power-output" class="level2">
 <h2 class="anchored" data-anchor-id="load-target-variables-solar-wind-power-output">Load Target Variables (Solar + Wind Power Output)</h2>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:00.576544Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:00.576066Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:00.600272Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:00.598949Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:00.576504Z&quot;}" data-trusted="true" data-execution_count="3">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">solar_file <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> data_path<span class="op" style="color: #5E5E5E;
@@ -102,6 +110,7 @@ font-style: inherit;">=</span> pd.read_csv(solar_file)</span>
 background-color: null;
 font-style: inherit;">=</span> pd.to_datetime(solar.date)</span>
 <span id="cb3-4">solar.info()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 365 entries, 0 to 364
@@ -115,6 +124,8 @@ memory usage: 5.8 KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:00.955273Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:00.953548Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:00.993276Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:00.991902Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:00.955216Z&quot;}" data-trusted="true" data-execution_count="4">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">wind <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(data_path<span class="op" style="color: #5E5E5E;
@@ -127,6 +138,7 @@ background-color: null;
 font-style: inherit;">=</span> pd.to_datetime(wind.date)</span>
 <span id="cb5-3">wind.info()</span>
 <span id="cb5-4">wind</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 333 entries, 0 to 332
@@ -217,6 +229,8 @@ memory usage: 5.3 KB</code></pre>
 <section id="load-rest-of-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="load-rest-of-the-data">Load Rest of the Data</h2>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:01.346424Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:01.345956Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:01.383655Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:01.382266Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:01.346384Z&quot;}" data-trusted="true" data-execution_count="5">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">humidity_monthly <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(data_path<span class="op" style="color: #5E5E5E;
@@ -241,6 +255,7 @@ font-style: inherit;">'wind_speed_metre_per_second_monthly_2022.csv'</span>)</sp
 <span id="cb7-4">humidity_monthly.info()</span>
 <span id="cb7-5">temp_monthly.info()</span>
 <span id="cb7-6">wind_speed_monthly.info()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 12 entries, 0 to 11
@@ -278,6 +293,8 @@ memory usage: 320.0 bytes</code></pre>
 <section id="daily-power-output-solar" class="level3">
 <h3 class="anchored" data-anchor-id="daily-power-output-solar">Daily Power Output (Solar)</h3>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:04.866437Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:04.865680Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:05.436209Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:05.434694Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:04.866397Z&quot;}" data-trusted="true" data-execution_count="6">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
@@ -296,6 +313,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'value'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='value'&gt;</code></pre>
 </div>
@@ -307,6 +325,8 @@ font-style: inherit;">'value'</span>)</span></code></pre></div>
 <section id="daily-power-output-wind" class="level3">
 <h3 class="anchored" data-anchor-id="daily-power-output-wind">Daily Power Output (Wind)</h3>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:05.439240Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:05.438856Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:05.950099Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:05.948681Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:05.439203Z&quot;}" data-trusted="true" data-execution_count="7">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
@@ -325,6 +345,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'value'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='value'&gt;</code></pre>
 </div>
@@ -338,6 +359,8 @@ font-style: inherit;">'value'</span>)</span></code></pre></div>
 <section id="temperature-in-celcius" class="level4">
 <h4 class="anchored" data-anchor-id="temperature-in-celcius">Temperature (in Celcius)</h4>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:05.953635Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:05.953154Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:06.294361Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:06.293176Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:05.953590Z&quot;}" data-trusted="true" data-execution_count="8">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plt.figure(figsize=(30, 7))</span></span>
@@ -352,6 +375,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'value'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>&lt;AxesSubplot: xlabel='month', ylabel='value'&gt;</code></pre>
 </div>
@@ -363,6 +387,8 @@ font-style: inherit;">'value'</span>)</span></code></pre></div>
 <section id="wind-speed-ms" class="level4">
 <h4 class="anchored" data-anchor-id="wind-speed-ms">Wind Speed (m/s)</h4>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:06.297740Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:06.296510Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:06.621282Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:06.619916Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:06.297677Z&quot;}" data-trusted="true" data-execution_count="9">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">sns.lineplot(data<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>wind_speed_monthly, x<span class="op" style="color: #5E5E5E;
@@ -374,6 +400,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'value'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>&lt;AxesSubplot: xlabel='month', ylabel='value'&gt;</code></pre>
 </div>
@@ -385,6 +412,8 @@ font-style: inherit;">'value'</span>)</span></code></pre></div>
 <section id="humidity" class="level4">
 <h4 class="anchored" data-anchor-id="humidity">Humidity (%)</h4>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:06.623730Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:06.623338Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:06.985235Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:06.983560Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:06.623695Z&quot;}" data-trusted="true" data-execution_count="10">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># plt.figure(figsize=(30, 7))</span></span>
@@ -399,6 +428,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'value'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>&lt;AxesSubplot: xlabel='month', ylabel='value'&gt;</code></pre>
 </div>
@@ -413,6 +443,8 @@ font-style: inherit;">'value'</span>)</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="combine-data">Combine Data</h2>
 <p>In this section, we will merge both the target variables and the features, to have one single dataframe to work with.</p>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:10.916793Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:10.915925Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:10.950105Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:10.949155Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:10.916737Z&quot;}" data-trusted="true" data-execution_count="11">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1">wind_renamed <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> wind.rename(columns<span class="op" style="color: #5E5E5E;
@@ -452,6 +484,7 @@ font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">True</span>)</span>
 <span id="cb19-5">target_data</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
@@ -543,6 +576,8 @@ font-style: inherit;">True</span>)</span>
 <section id="wind-power-before-interpolation" class="level3">
 <h3 class="anchored" data-anchor-id="wind-power-before-interpolation">Wind Power (Before Interpolation)</h3>
 <div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">plt.figure(figsize<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
@@ -559,6 +594,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'wind_power'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='wind_power'&gt;</code></pre>
 </div>
@@ -570,6 +606,8 @@ font-style: inherit;">'wind_power'</span>)</span></code></pre></div>
 <section id="wind-power-after-interpolation" class="level3">
 <h3 class="anchored" data-anchor-id="wind-power-after-interpolation">Wind Power (After Interpolation)</h3>
 <div class="cell" data-execution_count="13">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1">target_data.wind_power <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> target_data.wind_power.interpolate(limit_direction<span class="op" style="color: #5E5E5E;
@@ -593,6 +631,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'wind_power'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='wind_power'&gt;</code></pre>
 </div>
@@ -607,12 +646,15 @@ font-style: inherit;">'wind_power'</span>)</span></code></pre></div>
 <p>What we will do now, is to find correlations between the weather variables and the power output (wind &amp; solar). Considering that the weather conditions are only recorded once every month as opposed to the power output which is recorded on a daily basis; we will approximate the daily weather measurements with the month’s value i.e.&nbsp;if July had an average of 40 deg. celcius, then we will assume that every day of July had the same temperature.</p>
 <p><em>Before that however, let’s combine these weather variables…</em></p>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:53:14.583627Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:53:14.582924Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:53:14.604535Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:53:14.603183Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:53:14.583586Z&quot;}" data-trusted="true" data-execution_count="14">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1">target_data[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'month'</span>] <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> target_data.date.dt.month</span>
 <span id="cb24-2">target_data</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
@@ -713,6 +755,8 @@ font-style: inherit;">=</span> target_data.date.dt.month</span>
 </div>
 </div>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T21:02:48.362883Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T21:02:48.361960Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T21:02:48.404212Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T21:02:48.402775Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T21:02:48.362843Z&quot;}" data-trusted="true" data-execution_count="15">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1">wind_speed_monthly_renamed <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> wind_speed_monthly.rename(columns<span class="op" style="color: #5E5E5E;
@@ -780,6 +824,7 @@ font-style: inherit;">'inner'</span>)</span>
 background-color: null;
 font-style: inherit;">=</span> _.copy()</span>
 <span id="cb25-11">merged_all</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
@@ -917,6 +962,8 @@ font-style: inherit;">=</span> _.copy()</span>
 </div>
 <p><strong>Correlation Plot</strong></p>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T21:04:57.349967Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T21:04:57.349221Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T21:04:57.804872Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T21:04:57.803139Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T21:04:57.349933Z&quot;}" data-trusted="true" data-execution_count="16">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1">variables <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
@@ -938,6 +985,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">True</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>&lt;AxesSubplot: &gt;</code></pre>
 </div>
@@ -962,22 +1010,30 @@ font-style: inherit;">True</span>)</span></code></pre></div>
 <h2 class="anchored" data-anchor-id="sweetviz-package">Sweetviz Package</h2>
 <p>The Sweetviz library is popular package to automate the analysis and display a competent report of the dataset. We will use this package with our original dataset, and with our extended set of features (manama.csv).</p>
 <div class="cell" data-execution_count="17">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> sweetviz <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">as</span> sv</span></code></pre></div>
+</details>
 </div>
 <section id="wind-power-report" class="level3">
 <h3 class="anchored" data-anchor-id="wind-power-report">Wind Power Report</h3>
 <div class="cell" data-execution_count="18">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> IPython.display <span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">import</span> display, Markdown</span></code></pre></div>
+</details>
 </div>
 <div class="cell" data-execution_count="19">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1">analyze_report <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sv.analyze([merged_all,<span class="st" style="color: #20794D;
@@ -1010,8 +1066,9 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">)**'</span>))</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
-<pre><code>Feature: wind_power (TARGET)                 |█▎        | [ 12%]   00:00 -&gt; (00:00 left)Done! Use 'show' commands to display/save.   |██████████| [100%]   00:01 -&gt; (00:00 left)</code></pre>
+<pre><code>Feature: wind_power (TARGET)                 |█▎        | [ 12%]   00:00 -&gt; (00:00 left)Done! Use 'show' commands to display/save.   |██████████| [100%]   00:00 -&gt; (00:00 left)</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Report reports/wind_power_internal_data.html was generated.</code></pre>
@@ -1028,6 +1085,8 @@ font-style: inherit;">)**'</span>))</span></code></pre></div>
 <section id="solar-power-report" class="level3">
 <h3 class="anchored" data-anchor-id="solar-power-report">Solar Power Report</h3>
 <div class="cell" data-execution_count="20">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1">analyze_report <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sv.analyze([merged_all,<span class="st" style="color: #20794D;
@@ -1060,8 +1119,9 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">)**'</span>))</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
-<pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:01 -&gt; (00:00 left)</code></pre>
+<pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:00 -&gt; (00:00 left)</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Report reports/solar_power_internal_data.html was generated.</code></pre>
@@ -1079,6 +1139,8 @@ font-style: inherit;">)**'</span>))</span></code></pre></div>
 <section id="load-extended-weather-data" class="level2">
 <h2 class="anchored" data-anchor-id="load-extended-weather-data">Load Extended Weather Data</h2>
 <div class="cell" data-execution_count="21">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1">external_weather_df <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> pd.read_csv(data_path<span class="op" style="color: #5E5E5E;
@@ -1105,6 +1167,7 @@ font-style: inherit;">True</span>)</span>
 background-color: null;
 font-style: inherit;">=</span> pd.to_datetime(external_weather_df.date)</span>
 <span id="cb36-4">external_weather_df.info()</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 365 entries, 0 to 364
@@ -1149,7 +1212,10 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="22">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1">external_weather_df.columns</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>Index(['name', 'date', 'tempmax', 'tempmin', 'temp', 'feelslikemax',
        'feelslikemin', 'feelslike', 'dew', 'humidity', 'precip', 'precipprob',
@@ -1161,6 +1227,8 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="23">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># important_cols = ['date', 'temp', 'dew', 'humidity', 'precip', 'wind_speed', 'winddir', 'visibility', 'solarradiation', 'solarenergy', 'uvindex', 'sunrise', 'sunset']</span></span>
@@ -1202,6 +1270,7 @@ font-style: inherit;">60</span>)) <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># convert from km/h to m/s</span></span>
 <span id="cb40-5">external_weather_df_selected</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
@@ -1302,6 +1371,8 @@ font-style: inherit;"># convert from km/h to m/s</span></span>
 </div>
 </div>
 <div class="cell" data-execution_count="24">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># combine with target data</span></span>
@@ -1324,6 +1395,7 @@ font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span></span>
 <span id="cb41-4">merged_with_external</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
@@ -1465,6 +1537,8 @@ font-style: inherit;">0</span></span>
 <section id="wind-power-report-1" class="level3">
 <h3 class="anchored" data-anchor-id="wind-power-report-1">Wind Power Report</h3>
 <div class="cell" data-execution_count="25">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb42" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1">analyze_report <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sv.analyze([merged_with_external,<span class="st" style="color: #20794D;
@@ -1497,6 +1571,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">)**'</span>))</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:00 -&gt; (00:00 left)</code></pre>
 </div>
@@ -1511,6 +1586,8 @@ font-style: inherit;">)**'</span>))</span></code></pre></div>
 <section id="solar-power-report-1" class="level3">
 <h3 class="anchored" data-anchor-id="solar-power-report-1">Solar Power Report</h3>
 <div class="cell" data-execution_count="26">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"></span>
 <span id="cb45-2">analyze_report <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1544,6 +1621,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">)**'</span>))</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:00 -&gt; (00:00 left)</code></pre>
 </div>
@@ -1556,9 +1634,11 @@ font-style: inherit;">)**'</span>))</span></code></pre></div>
 </div>
 </section>
 </section>
-<section id="using-all-features-in-the-extended-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="using-all-features-in-the-extended-dataset">Using All Features in the Extended Dataset</h2>
+<section id="using-all-important-features-from-the-extended-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="using-all-important-features-from-the-extended-dataset">Using All <em>Important</em> Features from the Extended Dataset</h2>
 <div class="cell" data-execution_count="27">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb48" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1">important_cols <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
@@ -1672,22 +1752,13 @@ background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">True</span>)</span></code></pre></div>
+</details>
 </div>
-<div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">assert</span> external_weather_df_selected.isnull().<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">sum</span>().<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">sum</span>() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span></span></code></pre></div>
-</div>
+<p>Let’s take a look at the plot of the Sunlight Duration, to notice any relationships</p>
 <div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb50" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1">sns.barplot(external_weather_df_selected, x<span class="op" style="color: #5E5E5E;
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb49" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1">sns.barplot(external_weather_df_selected, x<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
@@ -1696,6 +1767,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'sunlight_duration_in_secs'</span>)</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='sunlight_duration_in_secs'&gt;</code></pre>
 </div>
@@ -1704,17 +1776,19 @@ font-style: inherit;">'sunlight_duration_in_secs'</span>)</span></code></pre></d
 </div>
 </div>
 <div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb52" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><span class="co" style="color: #5E5E5E;
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb51" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># combine with target data</span></span>
-<span id="cb52-2">merged_with_external <span class="op" style="color: #5E5E5E;
+<span id="cb51-2">merged_with_external <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> target_data.merge(external_weather_df_selected, on<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'date'</span>)</span>
-<span id="cb52-3"><span class="cf" style="color: #003B4F;
+<span id="cb51-3"><span class="cf" style="color: #003B4F;
 background-color: null;
 font-style: inherit;">assert</span> merged_with_external.isnull().<span class="bu" style="color: null;
 background-color: null;
@@ -1725,7 +1799,8 @@ background-color: null;
 font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span></span>
-<span id="cb52-4">merged_with_external</span></code></pre></div>
+<span id="cb51-4">merged_with_external</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 
@@ -1958,19 +2033,21 @@ font-style: inherit;">0</span></span>
 </div>
 </div>
 <div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb53" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1">analyze_report <span class="op" style="color: #5E5E5E;
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb52" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1">analyze_report <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sv.analyze([merged_with_external,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Wind Power Report'</span>], <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'wind_power'</span>)</span>
-<span id="cb53-2">filepath <span class="op" style="color: #5E5E5E;
+<span id="cb52-2">filepath <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'reports/Extra_Features_wind_power_external_data.html'</span></span>
-<span id="cb53-3">analyze_report.show_html(filepath<span class="op" style="color: #5E5E5E;
+<span id="cb52-3">analyze_report.show_html(filepath<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>filepath, layout<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1981,7 +2058,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">False</span>)</span>
-<span id="cb53-4">display(Markdown(<span class="ss" style="color: #20794D;
+<span id="cb52-4">display(Markdown(<span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">f'**To view the report, [CLICK HERE]("</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1990,6 +2067,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">")**'</span>))</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:01 -&gt; (00:00 left)</code></pre>
 </div>
@@ -2001,20 +2079,22 @@ font-style: inherit;">")**'</span>))</span></code></pre></div>
 </div>
 </div>
 <div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb56" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"></span>
-<span id="cb56-2">analyze_report <span class="op" style="color: #5E5E5E;
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb55" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"></span>
+<span id="cb55-2">analyze_report <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> sv.analyze([merged_with_external,<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Solar Power Report'</span>], <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'solar_power'</span>)</span>
-<span id="cb56-3">filepath <span class="op" style="color: #5E5E5E;
+<span id="cb55-3">filepath <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'reports/Extra_Features_solar_power_external_data.html'</span></span>
-<span id="cb56-4">analyze_report.show_html(filepath<span class="op" style="color: #5E5E5E;
+<span id="cb55-4">analyze_report.show_html(filepath<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>filepath, layout<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -2025,7 +2105,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="va" style="color: #111111;
 background-color: null;
 font-style: inherit;">False</span>)</span>
-<span id="cb56-5">display(Markdown(<span class="ss" style="color: #20794D;
+<span id="cb55-5">display(Markdown(<span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">f'**To view the report, [CLICK HERE]("</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -2034,6 +2114,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">")**'</span>))</span></code></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:01 -&gt; (00:00 left)</code></pre>
 </div>

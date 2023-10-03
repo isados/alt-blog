@@ -234,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#wind-power-report-1" id="toc-wind-power-report-1" class="nav-link" data-scroll-target="#wind-power-report-1">Wind Power Report</a></li>
   <li><a href="#solar-power-report-1" id="toc-solar-power-report-1" class="nav-link" data-scroll-target="#solar-power-report-1">Solar Power Report</a></li>
   </ul></li>
-  <li><a href="#using-all-features-in-the-extended-dataset" id="toc-using-all-features-in-the-extended-dataset" class="nav-link" data-scroll-target="#using-all-features-in-the-extended-dataset">Using All Features in the Extended Dataset</a></li>
+  <li><a href="#using-all-important-features-from-the-extended-dataset" id="toc-using-all-important-features-from-the-extended-dataset" class="nav-link" data-scroll-target="#using-all-important-features-from-the-extended-dataset">Using All <em>Important</em> Features from the Extended Dataset</a></li>
   </ul>
 </nav>
     </div>
@@ -256,6 +256,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="import-packages-setup" class="level2">
 <h2 class="anchored" data-anchor-id="import-packages-setup">Import Packages &amp; Setup</h2>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-27T20:41:02.412391Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-27T20:41:02.412040Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-27T20:41:03.264253Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-27T20:41:03.263200Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-27T20:41:02.412363Z&quot;}" data-trusted="true" data-execution_count="1">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># IMPORT PACKAGES</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -263,21 +265,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np <span class="co"># linear algebra</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># data processing, CSV file I/O (e.g. pd.read_csv)</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-27T20:41:00.348092Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-27T20:41:00.347579Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-27T20:41:00.353576Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-27T20:41:00.352276Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-27T20:41:00.348060Z&quot;}" data-trusted="true" data-execution_count="2">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For the Kaggle Environment, please uncomment below</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># kaggle_root = '/kaggle/input/bahrain-solar-research-2022' </span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># root_path = !ls</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>data_path <span class="op">=</span> Path(<span class="st">'data/'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section>
 <section id="load-target-variables-solar-wind-power-output" class="level2">
 <h2 class="anchored" data-anchor-id="load-target-variables-solar-wind-power-output">Load Target Variables (Solar + Wind Power Output)</h2>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:00.576544Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:00.576066Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:00.600272Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:00.598949Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:00.576504Z&quot;}" data-trusted="true" data-execution_count="3">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>solar_file <span class="op">=</span> data_path<span class="op">/</span><span class="st">'solar_daily_2022.csv'</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>solar <span class="op">=</span> pd.read_csv(solar_file)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>solar.date <span class="op">=</span> pd.to_datetime(solar.date)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>solar.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 365 entries, 0 to 364
@@ -291,10 +300,13 @@ memory usage: 5.8 KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:00.955273Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:00.953548Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:00.993276Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:00.991902Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:00.955216Z&quot;}" data-trusted="true" data-execution_count="4">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wind <span class="op">=</span> pd.read_csv(data_path<span class="op">/</span><span class="st">'wind_daily_2022.csv'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>wind.date <span class="op">=</span> pd.to_datetime(wind.date)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>wind.info()</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>wind</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 333 entries, 0 to 332
@@ -385,12 +397,15 @@ memory usage: 5.3 KB</code></pre>
 <section id="load-rest-of-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="load-rest-of-the-data">Load Rest of the Data</h2>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:01.346424Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:01.345956Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:01.383655Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:01.382266Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:01.346384Z&quot;}" data-trusted="true" data-execution_count="5">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>humidity_monthly <span class="op">=</span> pd.read_csv(data_path<span class="op">/</span><span class="st">'humidity_percent_monthly_2022.csv'</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>temp_monthly <span class="op">=</span> pd.read_csv(data_path<span class="op">/</span><span class="st">'temp_in_celcius_monthly_2022.csv'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>wind_speed_monthly <span class="op">=</span> pd.read_csv(data_path<span class="op">/</span><span class="st">'wind_speed_metre_per_second_monthly_2022.csv'</span>)</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>humidity_monthly.info()</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>temp_monthly.info()</span>
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>wind_speed_monthly.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 12 entries, 0 to 11
@@ -428,8 +443,11 @@ memory usage: 320.0 bytes</code></pre>
 <section id="daily-power-output-solar" class="level3">
 <h3 class="anchored" data-anchor-id="daily-power-output-solar">Daily Power Output (Solar)</h3>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:04.866437Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:04.865680Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:05.436209Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:05.434694Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:04.866397Z&quot;}" data-trusted="true" data-execution_count="6">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">30</span>, <span class="dv">7</span>))</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>solar, x<span class="op">=</span><span class="st">'date'</span>, y<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='value'&gt;</code></pre>
 </div>
@@ -441,8 +459,11 @@ memory usage: 320.0 bytes</code></pre>
 <section id="daily-power-output-wind" class="level3">
 <h3 class="anchored" data-anchor-id="daily-power-output-wind">Daily Power Output (Wind)</h3>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:05.439240Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:05.438856Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:05.950099Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:05.948681Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:05.439203Z&quot;}" data-trusted="true" data-execution_count="7">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">30</span>, <span class="dv">7</span>))</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>wind, x<span class="op">=</span><span class="st">'date'</span>, y<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='value'&gt;</code></pre>
 </div>
@@ -456,8 +477,11 @@ memory usage: 320.0 bytes</code></pre>
 <section id="temperature-in-celcius" class="level4">
 <h4 class="anchored" data-anchor-id="temperature-in-celcius">Temperature (in Celcius)</h4>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:05.953635Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:05.953154Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:06.294361Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:06.293176Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:05.953590Z&quot;}" data-trusted="true" data-execution_count="8">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.figure(figsize=(30, 7))</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>temp_monthly, x<span class="op">=</span><span class="st">'month'</span>, y<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>&lt;AxesSubplot: xlabel='month', ylabel='value'&gt;</code></pre>
 </div>
@@ -469,7 +493,10 @@ memory usage: 320.0 bytes</code></pre>
 <section id="wind-speed-ms" class="level4">
 <h4 class="anchored" data-anchor-id="wind-speed-ms">Wind Speed (m/s)</h4>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:06.297740Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:06.296510Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:06.621282Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:06.619916Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:06.297677Z&quot;}" data-trusted="true" data-execution_count="9">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>wind_speed_monthly, x<span class="op">=</span><span class="st">'month'</span>, y<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>&lt;AxesSubplot: xlabel='month', ylabel='value'&gt;</code></pre>
 </div>
@@ -481,8 +508,11 @@ memory usage: 320.0 bytes</code></pre>
 <section id="humidity" class="level4">
 <h4 class="anchored" data-anchor-id="humidity">Humidity (%)</h4>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:06.623730Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:06.623338Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:06.985235Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:06.983560Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:06.623695Z&quot;}" data-trusted="true" data-execution_count="10">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.figure(figsize=(30, 7))</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(data<span class="op">=</span>humidity_monthly, x<span class="op">=</span><span class="st">'month'</span>, y<span class="op">=</span><span class="st">'value'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>&lt;AxesSubplot: xlabel='month', ylabel='value'&gt;</code></pre>
 </div>
@@ -497,11 +527,14 @@ memory usage: 320.0 bytes</code></pre>
 <h2 class="anchored" data-anchor-id="combine-data">Combine Data</h2>
 <p>In this section, we will merge both the target variables and the features, to have one single dataframe to work with.</p>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:51:10.916793Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:51:10.915925Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:51:10.950105Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:51:10.949155Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:51:10.916737Z&quot;}" data-trusted="true" data-execution_count="11">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>wind_renamed <span class="op">=</span> wind.rename(columns<span class="op">=</span>{<span class="st">'value'</span>: <span class="st">'wind_power'</span>})</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>solar_renamed <span class="op">=</span> solar.rename(columns<span class="op">=</span>{<span class="st">'value'</span>: <span class="st">'solar_power'</span>})</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>target_data <span class="op">=</span> wind_renamed.merge(solar_renamed, how<span class="op">=</span><span class="st">'outer'</span>, on<span class="op">=</span><span class="st">'date'</span>)</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>target_data <span class="op">=</span> target_data.sort_values(<span class="st">'date'</span>).reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>target_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
@@ -593,8 +626,11 @@ memory usage: 320.0 bytes</code></pre>
 <section id="wind-power-before-interpolation" class="level3">
 <h3 class="anchored" data-anchor-id="wind-power-before-interpolation">Wind Power (Before Interpolation)</h3>
 <div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">30</span>, <span class="dv">7</span>))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>sns.lineplot(target_data, x<span class="op">=</span><span class="st">'date'</span>, y<span class="op">=</span><span class="st">'wind_power'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='wind_power'&gt;</code></pre>
 </div>
@@ -606,9 +642,12 @@ memory usage: 320.0 bytes</code></pre>
 <section id="wind-power-after-interpolation" class="level3">
 <h3 class="anchored" data-anchor-id="wind-power-after-interpolation">Wind Power (After Interpolation)</h3>
 <div class="cell" data-execution_count="13">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>target_data.wind_power <span class="op">=</span> target_data.wind_power.interpolate(limit_direction<span class="op">=</span><span class="st">'both'</span>)</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">30</span>, <span class="dv">7</span>))</span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>sns.lineplot(target_data, x<span class="op">=</span><span class="st">'date'</span>, y<span class="op">=</span><span class="st">'wind_power'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='wind_power'&gt;</code></pre>
 </div>
@@ -623,8 +662,11 @@ memory usage: 320.0 bytes</code></pre>
 <p>What we will do now, is to find correlations between the weather variables and the power output (wind &amp; solar). Considering that the weather conditions are only recorded once every month as opposed to the power output which is recorded on a daily basis; we will approximate the daily weather measurements with the month’s value i.e.&nbsp;if July had an average of 40 deg. celcius, then we will assume that every day of July had the same temperature.</p>
 <p><em>Before that however, let’s combine these weather variables…</em></p>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T20:53:14.583627Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T20:53:14.582924Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T20:53:14.604535Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T20:53:14.603183Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T20:53:14.583586Z&quot;}" data-trusted="true" data-execution_count="14">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>target_data[<span class="st">'month'</span>] <span class="op">=</span> target_data.date.dt.month</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>target_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
@@ -725,6 +767,8 @@ memory usage: 320.0 bytes</code></pre>
 </div>
 </div>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T21:02:48.362883Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T21:02:48.361960Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T21:02:48.404212Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T21:02:48.402775Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T21:02:48.362843Z&quot;}" data-trusted="true" data-execution_count="15">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>wind_speed_monthly_renamed <span class="op">=</span> wind_speed_monthly.rename(columns<span class="op">=</span>{<span class="st">'value'</span>: <span class="st">'wind_speed'</span>})</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>humidity_monthly_renamed <span class="op">=</span> humidity_monthly.rename(columns<span class="op">=</span>{<span class="st">'value'</span>: <span class="st">'humidity'</span>})</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>temp_monthly_renamed <span class="op">=</span> temp_monthly.rename(columns<span class="op">=</span>{<span class="st">'value'</span>: <span class="st">'temp'</span>})</span>
@@ -736,6 +780,7 @@ memory usage: 320.0 bytes</code></pre>
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>merged_all <span class="op">=</span> _.copy()</span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>merged_all</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
@@ -873,9 +918,12 @@ memory usage: 320.0 bytes</code></pre>
 </div>
 <p><strong>Correlation Plot</strong></p>
 <div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-09-25T21:04:57.349967Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-09-25T21:04:57.349221Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-09-25T21:04:57.804872Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-09-25T21:04:57.803139Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-09-25T21:04:57.349933Z&quot;}" data-trusted="true" data-execution_count="16">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>variables <span class="op">=</span> [<span class="st">'wind_power'</span>, <span class="st">'solar_power'</span>, <span class="st">'wind_speed'</span>, <span class="st">'humidity'</span>, <span class="st">'temp'</span>]</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>corr <span class="op">=</span> merged_all[variables].corr()</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>sns.heatmap(corr, annot<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>&lt;AxesSubplot: &gt;</code></pre>
 </div>
@@ -900,20 +948,29 @@ memory usage: 320.0 bytes</code></pre>
 <h2 class="anchored" data-anchor-id="sweetviz-package">Sweetviz Package</h2>
 <p>The Sweetviz library is popular package to automate the analysis and display a competent report of the dataset. We will use this package with our original dataset, and with our extended set of features (manama.csv).</p>
 <div class="cell" data-execution_count="17">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sweetviz <span class="im">as</span> sv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <section id="wind-power-report" class="level3">
 <h3 class="anchored" data-anchor-id="wind-power-report">Wind Power Report</h3>
 <div class="cell" data-execution_count="18">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display, Markdown</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 <div class="cell" data-execution_count="19">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>analyze_report <span class="op">=</span> sv.analyze([merged_all,<span class="st">'Wind Power Report'</span>], <span class="st">'wind_power'</span>)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>filepath <span class="op">=</span> <span class="st">'reports/wind_power_internal_data.html'</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>analyze_report.show_html(filepath<span class="op">=</span>filepath, layout<span class="op">=</span><span class="st">'vertical'</span>, open_browser<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f'**To view the report, [CLICK HERE](</span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">)**'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
-<pre><code>Feature: wind_power (TARGET)                 |█▎        | [ 12%]   00:00 -&gt; (00:00 left)Done! Use 'show' commands to display/save.   |██████████| [100%]   00:01 -&gt; (00:00 left)</code></pre>
+<pre><code>Feature: wind_power (TARGET)                 |█▎        | [ 12%]   00:00 -&gt; (00:00 left)Done! Use 'show' commands to display/save.   |██████████| [100%]   00:00 -&gt; (00:00 left)</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Report reports/wind_power_internal_data.html was generated.</code></pre>
@@ -930,12 +987,15 @@ memory usage: 320.0 bytes</code></pre>
 <section id="solar-power-report" class="level3">
 <h3 class="anchored" data-anchor-id="solar-power-report">Solar Power Report</h3>
 <div class="cell" data-execution_count="20">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>analyze_report <span class="op">=</span> sv.analyze([merged_all,<span class="st">'Solar Power Report'</span>], <span class="st">'solar_power'</span>)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>filepath <span class="op">=</span> <span class="st">'reports/solar_power_internal_data.html'</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>analyze_report.show_html(filepath<span class="op">=</span>filepath, layout<span class="op">=</span><span class="st">'vertical'</span>, open_browser<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f'**To view the report, [CLICK HERE](</span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">)**'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
-<pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:01 -&gt; (00:00 left)</code></pre>
+<pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:00 -&gt; (00:00 left)</code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Report reports/solar_power_internal_data.html was generated.</code></pre>
@@ -953,10 +1013,13 @@ memory usage: 320.0 bytes</code></pre>
 <section id="load-extended-weather-data" class="level2">
 <h2 class="anchored" data-anchor-id="load-extended-weather-data">Load Extended Weather Data</h2>
 <div class="cell" data-execution_count="21">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>external_weather_df <span class="op">=</span> pd.read_csv(data_path<span class="op">/</span><span class="st">'manama.csv'</span>)</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>external_weather_df.rename(columns<span class="op">=</span>{<span class="st">'windspeed'</span>: <span class="st">'wind_speed'</span>, <span class="st">'datetime'</span>: <span class="st">'date'</span>}, inplace<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>external_weather_df.date <span class="op">=</span> pd.to_datetime(external_weather_df.date)</span>
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>external_weather_df.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
 RangeIndex: 365 entries, 0 to 364
@@ -1001,7 +1064,10 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="22">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>external_weather_df.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>Index(['name', 'date', 'tempmax', 'tempmin', 'temp', 'feelslikemax',
        'feelslikemin', 'feelslike', 'dew', 'humidity', 'precip', 'precipprob',
@@ -1013,11 +1079,14 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="23">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># important_cols = ['date', 'temp', 'dew', 'humidity', 'precip', 'wind_speed', 'winddir', 'visibility', 'solarradiation', 'solarenergy', 'uvindex', 'sunrise', 'sunset']</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>important_cols <span class="op">=</span> [<span class="st">'date'</span>, <span class="st">'temp'</span>, <span class="st">'humidity'</span>, <span class="st">'wind_speed'</span>]</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>external_weather_df_selected <span class="op">=</span> external_weather_df[important_cols].copy()</span>
 <span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>external_weather_df_selected.loc[:, <span class="st">'wind_speed'</span>] <span class="op">=</span> external_weather_df_selected.wind_speed.<span class="bu">apply</span>(<span class="kw">lambda</span> x: x<span class="op">*</span><span class="dv">1000</span><span class="op">/</span>(<span class="dv">60</span><span class="op">*</span><span class="dv">60</span>)) <span class="co"># convert from km/h to m/s</span></span>
 <span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>external_weather_df_selected</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <div>
 
@@ -1118,10 +1187,13 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="24">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine with target data</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>merged_with_external <span class="op">=</span> target_data.merge(external_weather_df_selected, on<span class="op">=</span><span class="st">'date'</span>)</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> merged_with_external.isnull().<span class="bu">sum</span>().<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span></span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>merged_with_external</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
@@ -1263,10 +1335,13 @@ memory usage: 94.2+ KB</code></pre>
 <section id="wind-power-report-1" class="level3">
 <h3 class="anchored" data-anchor-id="wind-power-report-1">Wind Power Report</h3>
 <div class="cell" data-execution_count="25">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>analyze_report <span class="op">=</span> sv.analyze([merged_with_external,<span class="st">'Wind Power Report'</span>], <span class="st">'wind_power'</span>)</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>filepath <span class="op">=</span> <span class="st">'reports/wind_power_external_data.html'</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>analyze_report.show_html(filepath<span class="op">=</span>filepath, layout<span class="op">=</span><span class="st">'vertical'</span>, open_browser<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f'**To view the report, [CLICK HERE](</span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">)**'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:00 -&gt; (00:00 left)</code></pre>
 </div>
@@ -1281,11 +1356,14 @@ memory usage: 94.2+ KB</code></pre>
 <section id="solar-power-report-1" class="level3">
 <h3 class="anchored" data-anchor-id="solar-power-report-1">Solar Power Report</h3>
 <div class="cell" data-execution_count="26">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>analyze_report <span class="op">=</span> sv.analyze([merged_with_external,<span class="st">'Solar Power Report'</span>], <span class="st">'solar_power'</span>)</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>filepath <span class="op">=</span> <span class="st">'reports/solar_power_external_data.html'</span></span>
 <span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>analyze_report.show_html(filepath<span class="op">=</span>filepath, layout<span class="op">=</span><span class="st">'vertical'</span>, open_browser<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f'**To view the report, [CLICK HERE](</span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">)**'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:00 -&gt; (00:00 left)</code></pre>
 </div>
@@ -1298,9 +1376,11 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </section>
 </section>
-<section id="using-all-features-in-the-extended-dataset" class="level2">
-<h2 class="anchored" data-anchor-id="using-all-features-in-the-extended-dataset">Using All Features in the Extended Dataset</h2>
+<section id="using-all-important-features-from-the-extended-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="using-all-important-features-from-the-extended-dataset">Using All <em>Important</em> Features from the Extended Dataset</h2>
 <div class="cell" data-execution_count="27">
+<details>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>important_cols <span class="op">=</span> [<span class="st">'date'</span>, <span class="st">'temp'</span>, <span class="st">'dew'</span>, <span class="st">'humidity'</span>, <span class="st">'precip'</span>, <span class="st">'wind_speed'</span>, <span class="st">'winddir'</span>, <span class="st">'visibility'</span>, <span class="st">'solarradiation'</span>, <span class="st">'solarenergy'</span>, <span class="st">'uvindex'</span>, <span class="st">'sunrise'</span>, <span class="st">'sunset'</span>]</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>external_weather_df_selected <span class="op">=</span> external_weather_df[important_cols].copy()</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convert from km/h to ms/</span></span>
@@ -1316,12 +1396,14 @@ memory usage: 94.2+ KB</code></pre>
 <span id="cb48-13"><a href="#cb48-13" aria-hidden="true" tabindex="-1"></a>external_weather_df_selected.sunset <span class="op">=</span> pd.to_datetime(external_weather_df_selected.sunset)</span>
 <span id="cb48-14"><a href="#cb48-14" aria-hidden="true" tabindex="-1"></a>external_weather_df_selected[<span class="st">'sunlight_duration_in_secs'</span>] <span class="op">=</span> external_weather_df_selected.<span class="bu">apply</span>(get_diff_in_hours_and_mins, axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb48-15"><a href="#cb48-15" aria-hidden="true" tabindex="-1"></a>external_weather_df_selected.drop([<span class="st">'sunrise'</span>, <span class="st">'sunset'</span>], axis<span class="op">=</span><span class="dv">1</span>, inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
-<div class="cell" data-execution_count="28">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> external_weather_df_selected.isnull().<span class="bu">sum</span>().<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<p>Let’s take a look at the plot of the Sunlight Duration, to notice any relationships</p>
 <div class="cell" data-execution_count="29">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(external_weather_df_selected, x<span class="op">=</span><span class="st">'date'</span>, y<span class="op">=</span><span class="st">'sunlight_duration_in_secs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>sns.barplot(external_weather_df_selected, x<span class="op">=</span><span class="st">'date'</span>, y<span class="op">=</span><span class="st">'sunlight_duration_in_secs'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <pre><code>&lt;AxesSubplot: xlabel='date', ylabel='sunlight_duration_in_secs'&gt;</code></pre>
 </div>
@@ -1330,10 +1412,13 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="30">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine with target data</span></span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>merged_with_external <span class="op">=</span> target_data.merge(external_weather_df_selected, on<span class="op">=</span><span class="st">'date'</span>)</span>
-<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> merged_with_external.isnull().<span class="bu">sum</span>().<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span></span>
-<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>merged_with_external</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># combine with target data</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>merged_with_external <span class="op">=</span> target_data.merge(external_weather_df_selected, on<span class="op">=</span><span class="st">'date'</span>)</span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> merged_with_external.isnull().<span class="bu">sum</span>().<span class="bu">sum</span>() <span class="op">==</span> <span class="dv">0</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a>merged_with_external</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-display" data-execution_count="30">
 <div>
 
@@ -1566,10 +1651,13 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="31">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>analyze_report <span class="op">=</span> sv.analyze([merged_with_external,<span class="st">'Wind Power Report'</span>], <span class="st">'wind_power'</span>)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>filepath <span class="op">=</span> <span class="st">'reports/Extra_Features_wind_power_external_data.html'</span></span>
-<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>analyze_report.show_html(filepath<span class="op">=</span>filepath, layout<span class="op">=</span><span class="st">'vertical'</span>, open_browser<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f'**To view the report, [CLICK HERE]("</span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">")**'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>analyze_report <span class="op">=</span> sv.analyze([merged_with_external,<span class="st">'Wind Power Report'</span>], <span class="st">'wind_power'</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>filepath <span class="op">=</span> <span class="st">'reports/Extra_Features_wind_power_external_data.html'</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>analyze_report.show_html(filepath<span class="op">=</span>filepath, layout<span class="op">=</span><span class="st">'vertical'</span>, open_browser<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f'**To view the report, [CLICK HERE]("</span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">")**'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:01 -&gt; (00:00 left)</code></pre>
 </div>
@@ -1581,11 +1669,14 @@ memory usage: 94.2+ KB</code></pre>
 </div>
 </div>
 <div class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>analyze_report <span class="op">=</span> sv.analyze([merged_with_external,<span class="st">'Solar Power Report'</span>], <span class="st">'solar_power'</span>)</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>filepath <span class="op">=</span> <span class="st">'reports/Extra_Features_solar_power_external_data.html'</span></span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>analyze_report.show_html(filepath<span class="op">=</span>filepath, layout<span class="op">=</span><span class="st">'vertical'</span>, open_browser<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f'**To view the report, [CLICK HERE]("</span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">")**'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>analyze_report <span class="op">=</span> sv.analyze([merged_with_external,<span class="st">'Solar Power Report'</span>], <span class="st">'solar_power'</span>)</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>filepath <span class="op">=</span> <span class="st">'reports/Extra_Features_solar_power_external_data.html'</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>analyze_report.show_html(filepath<span class="op">=</span>filepath, layout<span class="op">=</span><span class="st">'vertical'</span>, open_browser<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>display(Markdown(<span class="ss">f'**To view the report, [CLICK HERE]("</span><span class="sc">{</span>filepath<span class="sc">}</span><span class="ss">")**'</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Done! Use 'show' commands to display/save.   |██████████| [100%]   00:01 -&gt; (00:00 left)</code></pre>
 </div>
