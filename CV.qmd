@@ -41,8 +41,9 @@ comments: false
 #### AI Instructor (Hybrid & Part-Time)
 ##### Go My Code, Bahrain
 ##### Mar 2021 - Feb 2022
-- Act as part-time coach & influencer to individuals interested in switching to a Data Science career, by having them go through a 3-month program and shipping a product by the end of it.
-- Each batch runs for a minimum 3 months
+- Roles
+    - Act as part-time coach & influencer to individuals interested in switching to a Data Science career, by having them go through a 3-month program and shipping a product by the end of it.
+    - Each batch runs for a minimum 3 months
 - Achievements
     - Successfully ran 3 batches back-to-back with a total of 8 students.
     - Secured 7 successful capstone data-science projects with the students.
@@ -52,49 +53,44 @@ comments: false
 ##### HakTrakNetworks, Bahrain
 ##### May 2021 - Jul 2021
 
-###### Roles
-- As a data science/software engineer 
-- Spearheading the ML capabilities for the startup in the field of Cyber Security by leveraging my experience in software development.
-Achievements
-- Our team successfully built and operated an intrusion detection system to prevent cyber attacks, within headquarters.
-
-Researched & Developed machine learning applications to evade and mitigate small-scale cyber attacks with Sci-Kit Learn & Pandas. Early Stage Development.
-
-Succeeded in developing a prototype intrusion detection system for the company within a month of joining. 
+- Roles
+    - As a data science/software engineer. Spearheading the ML capabilities for the startup in the field of Cyber Security by leveraging my experience in software development.
+- Achievements
+    - Our team successfully researched & built a prototype intrusion-detection system, within headquarters; using Sci-Kit Learn & Pandas.
 
 ### 2020
-#### Regional Support Manager
-Regional Support Manager @ Middle East & Africa
-AIESEC International | Apr 2020 - Jul 2022
+#### Regional Support Manager @ Middle East & Africa
+##### AIESEC International
+##### Apr 2020 - Jul 2022
+- Developed & maintained dashboards & data structures with the Regional Team of AIESEC International; to track performance growth for members in 28 countries; concretely & transparently.
+- Coached Vice Presidents and Team Leaders on the use of the dashboard tool.
 
-Developed & maintained dashboards & data structures with the Regional Team of AIESEC International to track performance growth for members in 28 countries; concretely & transparently.
-Coached Vice Presidents and Team Leaders on the use of the dashboard tool.
 #### National Support Manager | Information Management
 ##### AIESEC in Bahrain
 ##### Apr 2020 - Jan 2021
-- Developed dashboards & data structures with the National Team of AIESEC in Bahrain to track performance and potential growth of the entity more transparently.
-  
-Developed & maintained dashboards & data structures with the National Team of AIESEC in Bahrain to track performance growth of the whole entity concretely & transparently.
-Coached Vice Presidents and Team Leaders on the use of our data management tools.
+- Developed dashboards & data structures with the National Team of AIESEC in Bahrain to track performance and potential growth of the whole entity more transparently.
+- Coached Vice Presidents and Team Leaders on the use of our data management tools.
 
 
 #### Local Chapter Vice President | Project Management
 ##### AIESEC in Bahrain
 ##### Feb 2020 - Jan 2021
-VP of a local chapter for AIESEC in Bahrain. Leading a department to create projects that deliver social impact in the country under the United Nations Sustainable Development Goals.
 
-Executed 10 social impact projects from start to finish.
+- Roles
+    - VP of a local chapter for AIESEC in Bahrain. Leading a department to create projects that deliver social impact in the country under the United Nations Sustainable Development Goals.
 
-Achieved 6 social impact projects from start to finish.
-Collaborated with multiple stakeholders as partners.
-Drove measurable impact towards the United Nations Sustainable Development Goals.
-Created dashboards for performance and potential growth tracking, across AIESEC in Bahrain.
+- Achievements
+    - Executed 10 social impact projects from start to finish. Drove measurable impact towards the United Nations Sustainable Development Goals.
+    - Coached a total of 6 team leaders on project management & leadership skills. These team leaders in turn coached their teams to realize these social projects.
+    - Facilitated various local/national chapter conferences with my executive board team.
+    - Collaborated with multiple stakeholders as partners.
+
 
 ### 2019
 #### Team Leader | Incoming Global Exchange Program
 ##### AIESEC in Bahrain
 ##### Feb 2019 - Feb 2020
-- Managed teams within the Global Exchange products to connect a group of diverse & talented individuals from around the globe to startups & NGOs in the Kingdom of Bahrain to take on internships, and delivering life-changing experiences in the process.
+- Managed teams within the Global Exchange products to connect a group of diverse & talented individuals from around the globe with startups & NGOs in the Kingdom of Bahrain to take on internships, and offering them life-changing experiences in the process.
 
 #### Game Instructor (Part-time)
 ##### Cleverplay, Bahrain
@@ -105,16 +101,14 @@ Created dashboards for performance and potential growth tracking, across AIESEC 
 #### Information Technology Officer 
 ##### The Hive, Bahrain
 ##### Nov 2018 - Feb 2019
-
-- Worked as a Software Developer. Managed and developed tutorials on Basic Electronics
-and Computers aimed at kids and young adults. 
-- Accomplishments include --->
+- Roles
+    - Worked as a Software Developer.
+    - A tutor; manage workshops and tutorials
+- Achievements
+    - Managed and developed tutorials on Basic Electronics and Computers aimed at kids and young adults. 
     - Further developed a motion tracking software using pose estimation for clients to
     compete in **Mashro3i 2019**.
     - Conducted a Basic Computer workshop for a primary school in Karzakan, Bahrain
-
-Developed tutorials on Basic Electronics and Computers aimed at kids and young adults.
-Developed a motion tracking software using pose estimation for clients to compete in Mashro3i 2019
 
 #### Machine Learning Intern
 ##### Suprath Technologies Private Limited, Bangalore, India
@@ -122,19 +116,18 @@ Developed a motion tracking software using pose estimation for clients to compet
 - Interned at a Data Science Startup on Customer Care Support.
 - Succeeded in creating a sentence generation tool along with a dialog script for a chat-bot using Natural Language Processing to resolve chat queries.
 
- [Recommendation Letter 🔥]()
+ [Recommendation Letter 🔥](./assets/suprath_recommendation.pdf)
 
 ## Education
 ### 2018
 #### B.E. in Electronics & Communication
 ##### Acharya Institute of Technology, Bangalore, India
 ##### Aug 2014 - Jul 2018
-what did i study here
-Graduated; First Class with Distinction.
-Researched on deep learning using Keras API to distinguish between different breast cancers.
-Interned at a Machine Learning startup
-- Activities and societies: Member of Nature Watch (2016-2018)
-- Voracious Quizzer
+- Graduated with First Class Honors (Distinction).
+- Final Year Project on Breast Cancer Detection. Researched on Convolutional Neural Networks, and implemented one using the Keras API, to distinguish between different breast cancers.
+- Extracurricular
+    - Member of Nature Watch (2016-2018) : An eco-club based off campus
+    - Voracious Quizzer, won 1st and 2nd place in multiple competitions across the city.
 
 ### Until 2013
 
@@ -143,45 +136,48 @@ Interned at a Machine Learning startup
 - Studied Physics, Math & Computer Science.
 - Honored with a GPA of 3.1 
 - Built an invoicing system for a laundry shop using VB.NET as part of my final year
+
 ## Projects
 
 ### Technology
 
-### Social
-#### AIESEC in Bahrain : Ebtikar
-##### Jul 2020 - Aug 2020
-Under The Patronage of H.E. the President of Sustainable Energy Authority, Ebtikar is a program where participants prepare, compete and learn more about renewable energy and climate change. And they do so in teams where they will compete for the best idea.
-
-[Show Project 🔥](https://www.instagram.com/p/CDd9O-4gu-9/)
-
-
-Realtime 2D Pose Estimation GUI with OpenPose
-Feb 2019
-Associated with The Hive Bahrain
+#### Realtime 2D Pose Estimation GUI with OpenPose
+##### Feb 2019
+##### *Associated with The Hive, Bahrain*
 
 Successfully built a user interface for label recognition on top of a pose estimation algorithm to compete in Mashro3i 2019.
 
 [Show Project 🔥](https://github.com/isados/openpose-gui)
 
 
-Remote Control Car with M5Stack Wristwatch
-Jan 2019 - Jan 2019
-Associated with The Hive Bahrain
+#### Remote Control Car with M5Stack Wristwatch
+##### Jan 2019 - Jan 2019
+##### Associated with The Hive Bahrain
 
 Building a simple remote control kit to educate kids & young adults on the basics of IoT during a workshop at Brinc IoT Building
 
 
-Breast Cancer Screening using Keras
-Jan 2018 - Jun 2018
-Associated with Acharya Institutes
+#### Breast Cancer Screening using Keras
+##### Jan 2018 - Jun 2018
+##### Associated with Acharya Institutes
 Final year team project on distinguishing forms of breast cancer using a Keras, a deep learning framework.
 Compiled a report on the study, and worked on it while interning at a Data Science startup.
 [Show Project 🔥](https://github.com/isados/breast-cancer-screening)
 Contributors: Sumanth Krishna, Srujana
 
 
-AIESEC EXPA Assistant Tool
+#### AIESEC EXPA Assistant Tool
 Developed an automation tool using Python Selenium to scrap data from the AIESEC Management Site to update our CRM workspace.
+
+### Social
+#### AIESEC in Bahrain : Ebtikar 
+##### Jul 2020 - Aug 2020
+###### Description
+Under The Patronage of H.E. the President of Sustainable Energy Authority, Ebtikar is a program where participants prepare, compete (in teams) and learn more about renewable energy and climate change. And they do so in teams where they will compete for the best idea.
+
+[Show Project 🔥](https://www.instagram.com/p/CDd9O-4gu-9/)
+
+
 
 ## Licenses & Certifications
 
