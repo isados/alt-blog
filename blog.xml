@@ -10,7 +10,1326 @@
 <atom:link href="https://isados.github.io/blog/blog.xml" rel="self" type="application/rss+xml"/>
 <description>A Fun Tomorrow</description>
 <generator>quarto-1.3.319</generator>
-<lastBuildDate>Sun, 01 Oct 2023 21:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 30 Oct 2023 21:00:00 GMT</lastBuildDate>
+<item>
+  <title>Global Socio-Economic Factors Part 1: Data Processing</title>
+  <dc:creator>Isa AlDoseri</dc:creator>
+  <link>https://isados.github.io/blog/posts/global_socioecon_indicators/index.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This is the dataset where we study historical indicators of wealth, prosperity and detriment (via CO2 production) in the world.</p>
+<p>This data was taken from <a href="https://www.kaggle.com/datasets/toriqulstu/global-socio-economic-and-environmental-indicators">Kaggle</a>. We will attempt to wrangle the data and bring it to a form that is suitable for predictive modelling later on (next chapter).</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> pathlib <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Path</span></code></pre></div>
+</div>
+<p>These are the datasets in question</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-10-14T00:06:54.099691Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-10-14T00:06:54.099304Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-10-14T00:06:55.134297Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-10-14T00:06:55.133194Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-10-14T00:06:54.099656Z&quot;}" data-trusted="true" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">data_folder <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'data'</span></span>
+<span id="cb2-2"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span>ls <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> {data_folder}<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/*</span>.csv</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>data/co2_production.csv
+data/gross_national_income_per_capital.csv
+data/human_development_index.csv
+data/life_expectancy_by_birth.csv</code></pre>
+</div>
+</div>
+</section>
+<section id="datasets" class="level2">
+<h2 class="anchored" data-anchor-id="datasets">Datasets</h2>
+<p>Let’s read one of them and print the columns…</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-10-14T00:08:53.844532Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-10-14T00:08:53.844128Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-10-14T00:08:53.878443Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-10-14T00:08:53.877340Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-10-14T00:08:53.844502Z&quot;}" data-trusted="true" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">data_folder <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> Path(data_folder)</span>
+<span id="cb4-2">life_exp <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(data_folder<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'life_expectancy_by_birth.csv'</span>)</span>
+<span id="cb4-3">life_exp.info()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+RangeIndex: 206 entries, 0 to 205
+Data columns (total 37 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   ISO3           195 non-null    object 
+ 1   Country        206 non-null    object 
+ 2   hdicode        191 non-null    object 
+ 3   region         151 non-null    object 
+ 4   hdi_rank_2021  191 non-null    float64
+ 5   le_1990        206 non-null    float64
+ 6   le_1991        206 non-null    float64
+ 7   le_1992        206 non-null    float64
+ 8   le_1993        206 non-null    float64
+ 9   le_1994        206 non-null    float64
+ 10  le_1995        206 non-null    float64
+ 11  le_1996        206 non-null    float64
+ 12  le_1997        206 non-null    float64
+ 13  le_1998        206 non-null    float64
+ 14  le_1999        206 non-null    float64
+ 15  le_2000        206 non-null    float64
+ 16  le_2001        206 non-null    float64
+ 17  le_2002        206 non-null    float64
+ 18  le_2003        206 non-null    float64
+ 19  le_2004        206 non-null    float64
+ 20  le_2005        206 non-null    float64
+ 21  le_2006        206 non-null    float64
+ 22  le_2007        206 non-null    float64
+ 23  le_2008        206 non-null    float64
+ 24  le_2009        206 non-null    float64
+ 25  le_2010        206 non-null    float64
+ 26  le_2011        206 non-null    float64
+ 27  le_2012        206 non-null    float64
+ 28  le_2013        206 non-null    float64
+ 29  le_2014        206 non-null    float64
+ 30  le_2015        206 non-null    float64
+ 31  le_2016        206 non-null    float64
+ 32  le_2017        206 non-null    float64
+ 33  le_2018        206 non-null    float64
+ 34  le_2019        206 non-null    float64
+ 35  le_2020        206 non-null    float64
+ 36  le_2021        206 non-null    float64
+dtypes: float64(33), object(4)
+memory usage: 59.7+ KB</code></pre>
+</div>
+</div>
+<p>Now let’s read the rest of the data</p>
+<div class="cell" data-execution="{&quot;iopub.execute_input&quot;:&quot;2023-10-14T00:39:42.179615Z&quot;,&quot;iopub.status.busy&quot;:&quot;2023-10-14T00:39:42.179250Z&quot;,&quot;iopub.status.idle&quot;:&quot;2023-10-14T00:39:42.208686Z&quot;,&quot;shell.execute_reply&quot;:&quot;2023-10-14T00:39:42.207434Z&quot;,&quot;shell.execute_reply.started&quot;:&quot;2023-10-14T00:39:42.179586Z&quot;}" data-trusted="true" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">co2 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(data_folder<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'co2_production.csv'</span>)</span>
+<span id="cb6-2">gross_income_percapita <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(data_folder<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'gross_national_income_per_capital.csv'</span>)</span>
+<span id="cb6-3">hdi_index <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(data_folder<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'human_development_index.csv'</span>)</span></code></pre></div>
+</div>
+<p>Let’s ensure all 206 countries are mentioned in all three datasets</p>
+<div class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">hdi_index.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> co2.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> gross_income_percapita.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> life_exp.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>True</code></pre>
+</div>
+</div>
+<p>We can see the same number of columns too</p>
+<div class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(hdi_index.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])</span>
+<span id="cb9-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(co2.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])</span>
+<span id="cb9-3"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(gross_income_percapita.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])</span>
+<span id="cb9-4"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(life_exp.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>])</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>37
+37
+37
+37</code></pre>
+</div>
+</div>
+</section>
+<section id="determining-id-column" class="level2">
+<h2 class="anchored" data-anchor-id="determining-id-column">Determining ID column</h2>
+<p>We can look at the <code>ISO3</code> &amp; <code>Country</code> columns as global identifiers (we’ll single one out later on), let’s see if there’s any null values in the <code>ISO3</code> column</p>
+<div class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">life_exp[life_exp.ISO3.isnull()]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ISO3</th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">hdicode</th>
+<th data-quarto-table-cell-role="th">region</th>
+<th data-quarto-table-cell-role="th">hdi_rank_2021</th>
+<th data-quarto-table-cell-role="th">le_1990</th>
+<th data-quarto-table-cell-role="th">le_1991</th>
+<th data-quarto-table-cell-role="th">le_1992</th>
+<th data-quarto-table-cell-role="th">le_1993</th>
+<th data-quarto-table-cell-role="th">le_1994</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">le_2012</th>
+<th data-quarto-table-cell-role="th">le_2013</th>
+<th data-quarto-table-cell-role="th">le_2014</th>
+<th data-quarto-table-cell-role="th">le_2015</th>
+<th data-quarto-table-cell-role="th">le_2016</th>
+<th data-quarto-table-cell-role="th">le_2017</th>
+<th data-quarto-table-cell-role="th">le_2018</th>
+<th data-quarto-table-cell-role="th">le_2019</th>
+<th data-quarto-table-cell-role="th">le_2020</th>
+<th data-quarto-table-cell-role="th">le_2021</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">195</td>
+<td>NaN</td>
+<td>Very high human development</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>73.776652</td>
+<td>73.931896</td>
+<td>74.058848</td>
+<td>73.852640</td>
+<td>74.007158</td>
+<td>...</td>
+<td>78.578754</td>
+<td>78.822196</td>
+<td>79.057616</td>
+<td>79.062435</td>
+<td>79.264933</td>
+<td>79.428843</td>
+<td>79.582768</td>
+<td>79.822662</td>
+<td>78.789745</td>
+<td>78.521301</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">196</td>
+<td>NaN</td>
+<td>High human development</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>67.315701</td>
+<td>67.567552</td>
+<td>67.966260</td>
+<td>68.358081</td>
+<td>68.636211</td>
+<td>...</td>
+<td>74.212238</td>
+<td>74.463776</td>
+<td>74.732246</td>
+<td>74.944071</td>
+<td>75.152677</td>
+<td>75.261530</td>
+<td>75.600606</td>
+<td>75.785826</td>
+<td>75.120548</td>
+<td>74.709094</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">197</td>
+<td>NaN</td>
+<td>Medium human development</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>58.757754</td>
+<td>58.991558</td>
+<td>59.592548</td>
+<td>59.880467</td>
+<td>60.250251</td>
+<td>...</td>
+<td>67.460860</td>
+<td>67.893291</td>
+<td>68.411503</td>
+<td>68.895967</td>
+<td>69.314997</td>
+<td>69.694263</td>
+<td>69.998178</td>
+<td>70.219458</td>
+<td>69.517580</td>
+<td>67.438318</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">198</td>
+<td>NaN</td>
+<td>Low human development</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>50.351409</td>
+<td>50.608373</td>
+<td>50.467296</td>
+<td>50.606850</td>
+<td>51.070213</td>
+<td>...</td>
+<td>59.569566</td>
+<td>60.010001</td>
+<td>60.326771</td>
+<td>60.657080</td>
+<td>61.064843</td>
+<td>61.424061</td>
+<td>61.721181</td>
+<td>62.083426</td>
+<td>61.675690</td>
+<td>61.310991</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">199</td>
+<td>NaN</td>
+<td>Arab States</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>62.973324</td>
+<td>63.225764</td>
+<td>63.520079</td>
+<td>64.512882</td>
+<td>65.562309</td>
+<td>...</td>
+<td>70.261228</td>
+<td>70.274253</td>
+<td>70.570127</td>
+<td>70.836099</td>
+<td>71.019940</td>
+<td>71.508744</td>
+<td>71.711891</td>
+<td>71.922194</td>
+<td>71.002105</td>
+<td>70.895040</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">200</td>
+<td>NaN</td>
+<td>East Asia and the Pacific</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>67.161758</td>
+<td>67.383754</td>
+<td>67.905512</td>
+<td>68.375688</td>
+<td>68.640580</td>
+<td>...</td>
+<td>74.427861</td>
+<td>74.677412</td>
+<td>74.936109</td>
+<td>75.156317</td>
+<td>75.355177</td>
+<td>75.419246</td>
+<td>75.835426</td>
+<td>76.036110</td>
+<td>75.968330</td>
+<td>75.579650</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">201</td>
+<td>NaN</td>
+<td>Europe and Central Asia</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>67.781962</td>
+<td>67.609336</td>
+<td>66.896095</td>
+<td>66.718280</td>
+<td>67.136734</td>
+<td>...</td>
+<td>72.606274</td>
+<td>72.992396</td>
+<td>73.357649</td>
+<td>73.681015</td>
+<td>73.983262</td>
+<td>74.343005</td>
+<td>74.505959</td>
+<td>74.700741</td>
+<td>72.780992</td>
+<td>72.856526</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">202</td>
+<td>NaN</td>
+<td>Latin America and the Caribbean</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>67.770568</td>
+<td>68.127209</td>
+<td>68.458998</td>
+<td>68.786974</td>
+<td>69.166664</td>
+<td>...</td>
+<td>74.067656</td>
+<td>74.316945</td>
+<td>74.521732</td>
+<td>74.579895</td>
+<td>74.544240</td>
+<td>74.705572</td>
+<td>74.823478</td>
+<td>75.014905</td>
+<td>73.008316</td>
+<td>72.099890</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">203</td>
+<td>NaN</td>
+<td>South Asia</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>58.830494</td>
+<td>59.102221</td>
+<td>59.727847</td>
+<td>60.058622</td>
+<td>60.441754</td>
+<td>...</td>
+<td>67.915940</td>
+<td>68.395439</td>
+<td>68.905849</td>
+<td>69.407382</td>
+<td>69.874722</td>
+<td>70.245467</td>
+<td>70.517018</td>
+<td>70.722315</td>
+<td>69.972908</td>
+<td>67.855530</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">204</td>
+<td>NaN</td>
+<td>Sub-Saharan Africa</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>49.868704</td>
+<td>49.989060</td>
+<td>49.900445</td>
+<td>49.817075</td>
+<td>49.722427</td>
+<td>...</td>
+<td>57.987394</td>
+<td>58.539213</td>
+<td>59.010080</td>
+<td>59.428775</td>
+<td>59.954595</td>
+<td>60.348837</td>
+<td>60.735440</td>
+<td>61.120031</td>
+<td>60.729051</td>
+<td>60.112467</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">205</td>
+<td>NaN</td>
+<td>World</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>NaN</td>
+<td>65.144798</td>
+<td>65.299082</td>
+<td>65.584015</td>
+<td>65.753616</td>
+<td>65.986642</td>
+<td>...</td>
+<td>71.289119</td>
+<td>71.581265</td>
+<td>71.886202</td>
+<td>72.111793</td>
+<td>72.370895</td>
+<td>72.568952</td>
+<td>72.816114</td>
+<td>73.012099</td>
+<td>72.257297</td>
+<td>71.365465</td>
+</tr>
+</tbody>
+</table>
+
+<p>11 rows × 37 columns</p>
+</div>
+</div>
+</div>
+<p>These aren’t countries, rather they are groups that we can look at holistically. We will drop them.</p>
+<div class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">life_exp_countries <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> life_exp.dropna(subset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ISO3'</span>, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb12-2">life_exp_countries.info()</span></code></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
+Int64Index: 195 entries, 0 to 194
+Data columns (total 37 columns):
+ #   Column         Non-Null Count  Dtype  
+---  ------         --------------  -----  
+ 0   ISO3           195 non-null    object 
+ 1   Country        195 non-null    object 
+ 2   hdicode        191 non-null    object 
+ 3   region         151 non-null    object 
+ 4   hdi_rank_2021  191 non-null    float64
+ 5   le_1990        195 non-null    float64
+ 6   le_1991        195 non-null    float64
+ 7   le_1992        195 non-null    float64
+ 8   le_1993        195 non-null    float64
+ 9   le_1994        195 non-null    float64
+ 10  le_1995        195 non-null    float64
+ 11  le_1996        195 non-null    float64
+ 12  le_1997        195 non-null    float64
+ 13  le_1998        195 non-null    float64
+ 14  le_1999        195 non-null    float64
+ 15  le_2000        195 non-null    float64
+ 16  le_2001        195 non-null    float64
+ 17  le_2002        195 non-null    float64
+ 18  le_2003        195 non-null    float64
+ 19  le_2004        195 non-null    float64
+ 20  le_2005        195 non-null    float64
+ 21  le_2006        195 non-null    float64
+ 22  le_2007        195 non-null    float64
+ 23  le_2008        195 non-null    float64
+ 24  le_2009        195 non-null    float64
+ 25  le_2010        195 non-null    float64
+ 26  le_2011        195 non-null    float64
+ 27  le_2012        195 non-null    float64
+ 28  le_2013        195 non-null    float64
+ 29  le_2014        195 non-null    float64
+ 30  le_2015        195 non-null    float64
+ 31  le_2016        195 non-null    float64
+ 32  le_2017        195 non-null    float64
+ 33  le_2018        195 non-null    float64
+ 34  le_2019        195 non-null    float64
+ 35  le_2020        195 non-null    float64
+ 36  le_2021        195 non-null    float64
+dtypes: float64(33), object(4)
+memory usage: 57.9+ KB</code></pre>
+</div>
+</div>
+<p>let’s repeat this step for the other datasets, and see if they match in # of rows</p>
+<div class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">co2_countries <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> co2.dropna(subset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ISO3'</span>, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb14-2">gross_income_percapita_countries <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> gross_income_percapita.dropna(subset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ISO3'</span>, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb14-3">hdi_index_countries <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> hdi_index.dropna(subset<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ISO3'</span>, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb14-4"></span>
+<span id="cb14-5">co2_countries.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> hdi_index_countries.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> gross_income_percapita_countries.shape[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
+<pre><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="time-series-data" class="level2">
+<h2 class="anchored" data-anchor-id="time-series-data">Time Series Data</h2>
+<p>These datasets, when combined, have all the makings of a time-series dataset! We wager that we can combine them into one big dataset and save it to disk. This will simplify our modeling in the next chapter.</p>
+<p>We see some miscellaneous data that can be put aside; particularly the <code>hdicode</code> &amp; <code>hdi_rank_2021</code> columns</p>
+<div class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Putting misc cols aside so it's not repeated</span></span>
+<span id="cb16-2">country_miscellaneous_cols <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'region'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'hdicode'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'hdi_rank_2021'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ISO3'</span>]</span>
+<span id="cb16-3">country_misc_data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> life_exp_countries[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Country'</span>]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>country_miscellaneous_cols]</span>
+<span id="cb16-4"></span>
+<span id="cb16-5">time_series_data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> life_exp_countries.drop(country_miscellaneous_cols, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb16-6">.merge(hdi_index_countries.drop(country_miscellaneous_cols, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>), on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Country'</span>, how<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'outer'</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb16-7">.merge(co2_countries.drop(country_miscellaneous_cols, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>), on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Country'</span>, how<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'outer'</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb16-8">.merge(gross_income_percapita_countries.drop(country_miscellaneous_cols, axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>), on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Country'</span>, how<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'outer'</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb16-9"></span>
+<span id="cb16-10">time_series_data</span>
+<span id="cb16-11"></span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="10">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">le_1990</th>
+<th data-quarto-table-cell-role="th">le_1991</th>
+<th data-quarto-table-cell-role="th">le_1992</th>
+<th data-quarto-table-cell-role="th">le_1993</th>
+<th data-quarto-table-cell-role="th">le_1994</th>
+<th data-quarto-table-cell-role="th">le_1995</th>
+<th data-quarto-table-cell-role="th">le_1996</th>
+<th data-quarto-table-cell-role="th">le_1997</th>
+<th data-quarto-table-cell-role="th">le_1998</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">gnipc_2012</th>
+<th data-quarto-table-cell-role="th">gnipc_2013</th>
+<th data-quarto-table-cell-role="th">gnipc_2014</th>
+<th data-quarto-table-cell-role="th">gnipc_2015</th>
+<th data-quarto-table-cell-role="th">gnipc_2016</th>
+<th data-quarto-table-cell-role="th">gnipc_2017</th>
+<th data-quarto-table-cell-role="th">gnipc_2018</th>
+<th data-quarto-table-cell-role="th">gnipc_2019</th>
+<th data-quarto-table-cell-role="th">gnipc_2020</th>
+<th data-quarto-table-cell-role="th">gnipc_2021</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Afghanistan</td>
+<td>45.9672</td>
+<td>46.6631</td>
+<td>47.5955</td>
+<td>51.4664</td>
+<td>51.4945</td>
+<td>52.5442</td>
+<td>53.2433</td>
+<td>53.6342</td>
+<td>52.9431</td>
+<td>...</td>
+<td>2125.862821</td>
+<td>2193.553936</td>
+<td>2178.507021</td>
+<td>2101.589319</td>
+<td>2077.566899</td>
+<td>2085.487571</td>
+<td>2054.939895</td>
+<td>2097.889450</td>
+<td>1997.852149</td>
+<td>1824.190915</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Angola</td>
+<td>41.8933</td>
+<td>43.8127</td>
+<td>42.2088</td>
+<td>42.1009</td>
+<td>43.4217</td>
+<td>45.8491</td>
+<td>46.0329</td>
+<td>46.3065</td>
+<td>45.0570</td>
+<td>...</td>
+<td>7280.845666</td>
+<td>7478.104777</td>
+<td>7704.231949</td>
+<td>7652.656486</td>
+<td>7189.426672</td>
+<td>6861.575738</td>
+<td>6381.521946</td>
+<td>6082.746624</td>
+<td>5593.142060</td>
+<td>5465.617791</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Albania</td>
+<td>73.1439</td>
+<td>73.3776</td>
+<td>73.7148</td>
+<td>73.9391</td>
+<td>74.1313</td>
+<td>74.3616</td>
+<td>74.5923</td>
+<td>73.9039</td>
+<td>74.9899</td>
+<td>...</td>
+<td>11146.263030</td>
+<td>11552.982470</td>
+<td>11691.648290</td>
+<td>12016.297600</td>
+<td>12484.624200</td>
+<td>12802.148310</td>
+<td>13302.705960</td>
+<td>13485.311240</td>
+<td>12996.762910</td>
+<td>14131.110390</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Andorra</td>
+<td>78.4063</td>
+<td>77.9805</td>
+<td>80.3241</td>
+<td>78.6633</td>
+<td>82.6380</td>
+<td>78.9616</td>
+<td>80.3340</td>
+<td>80.9439</td>
+<td>79.4259</td>
+<td>...</td>
+<td>47126.814610</td>
+<td>46385.095200</td>
+<td>48483.720320</td>
+<td>49936.874540</td>
+<td>52267.738320</td>
+<td>52650.225760</td>
+<td>53483.306630</td>
+<td>54465.047400</td>
+<td>47878.666640</td>
+<td>51166.626610</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>United Arab Emirates</td>
+<td>71.9004</td>
+<td>72.2414</td>
+<td>72.3062</td>
+<td>72.5213</td>
+<td>72.5982</td>
+<td>72.6945</td>
+<td>72.7674</td>
+<td>72.9367</td>
+<td>73.0658</td>
+<td>...</td>
+<td>57445.954750</td>
+<td>60005.695360</td>
+<td>62573.505310</td>
+<td>65577.512240</td>
+<td>66881.329740</td>
+<td>67667.508460</td>
+<td>67195.095230</td>
+<td>68590.900940</td>
+<td>63016.401220</td>
+<td>62573.591810</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">190</td>
+<td>Samoa</td>
+<td>67.6584</td>
+<td>67.8814</td>
+<td>68.3855</td>
+<td>68.7009</td>
+<td>68.9795</td>
+<td>69.2984</td>
+<td>69.5877</td>
+<td>69.8746</td>
+<td>70.1711</td>
+<td>...</td>
+<td>5683.651395</td>
+<td>5675.889504</td>
+<td>5757.486050</td>
+<td>6222.783552</td>
+<td>6401.830980</td>
+<td>6287.673021</td>
+<td>6280.573936</td>
+<td>6356.988690</td>
+<td>5812.868328</td>
+<td>5307.953374</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">191</td>
+<td>Yemen</td>
+<td>58.6994</td>
+<td>59.0490</td>
+<td>59.4283</td>
+<td>59.8595</td>
+<td>59.7135</td>
+<td>60.4532</td>
+<td>60.5678</td>
+<td>61.1193</td>
+<td>61.3748</td>
+<td>...</td>
+<td>3152.900024</td>
+<td>3212.651579</td>
+<td>2775.842952</td>
+<td>1785.788608</td>
+<td>1494.230811</td>
+<td>1302.425254</td>
+<td>1341.656234</td>
+<td>1349.567046</td>
+<td>1370.601082</td>
+<td>1314.270189</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">192</td>
+<td>South Africa</td>
+<td>63.3753</td>
+<td>63.2649</td>
+<td>63.3414</td>
+<td>63.0447</td>
+<td>62.6118</td>
+<td>62.2616</td>
+<td>61.4593</td>
+<td>60.8053</td>
+<td>60.0008</td>
+<td>...</td>
+<td>13602.253520</td>
+<td>13732.252520</td>
+<td>13700.834560</td>
+<td>13694.728110</td>
+<td>13545.358590</td>
+<td>13475.988210</td>
+<td>13491.221790</td>
+<td>13366.474640</td>
+<td>12449.671040</td>
+<td>12948.373250</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">193</td>
+<td>Zambia</td>
+<td>47.9263</td>
+<td>47.0971</td>
+<td>46.5119</td>
+<td>46.2094</td>
+<td>45.8543</td>
+<td>45.5534</td>
+<td>45.2326</td>
+<td>44.9446</td>
+<td>44.7011</td>
+<td>...</td>
+<td>3333.576512</td>
+<td>3389.478940</td>
+<td>3263.039162</td>
+<td>3403.471444</td>
+<td>3237.505650</td>
+<td>3330.552717</td>
+<td>3418.096158</td>
+<td>3365.410652</td>
+<td>3178.619722</td>
+<td>3217.767739</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">194</td>
+<td>Zimbabwe</td>
+<td>59.4264</td>
+<td>58.0911</td>
+<td>56.4354</td>
+<td>54.4264</td>
+<td>52.5878</td>
+<td>50.5310</td>
+<td>48.9551</td>
+<td>47.9933</td>
+<td>46.8192</td>
+<td>...</td>
+<td>3618.629526</td>
+<td>3632.111591</td>
+<td>3644.856047</td>
+<td>3638.532892</td>
+<td>3606.750671</td>
+<td>3728.918785</td>
+<td>3864.012419</td>
+<td>3674.564482</td>
+<td>3654.289051</td>
+<td>3809.887158</td>
+</tr>
+</tbody>
+</table>
+
+<p>195 rows × 129 columns</p>
+</div>
+</div>
+</div>
+</section>
+<section id="melt-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="melt-dataset">Melt Dataset</h2>
+<p>We like the earlier form of the dataset, but we want something better; considering that there are too many columns that are hard to read. Let’s melt it!</p>
+<p>Basically, it will involve extracting the <code>year</code> out of the life_exp, hdi, etc. variables and having it as a separate column, with the value of that year displayed next to it. Finally we’re going to use that as a key to merge all the variables together.</p>
+<p>Finally each row will take the following form…</p>
+<div class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Melt the dataset</span></span>
+<span id="cb17-2">life_exp_year_columns <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">tuple</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'le_</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>year<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> year <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1990</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2022</span>))</span>
+<span id="cb17-3">hdi_year_columns <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">tuple</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'hdi_</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>year<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> year <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1990</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2022</span>))</span>
+<span id="cb17-4">gnipc_year_columns <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">tuple</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'gnipc_</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>year<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> year <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1990</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2022</span>))</span>
+<span id="cb17-5">co2_year_columns <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">tuple</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'co2_prod_</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>year<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> year <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">range</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1990</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2022</span>))</span>
+<span id="cb17-6"></span>
+<span id="cb17-7"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">def</span> melt_df_by_var(df, value_name, value_vars):</span>
+<span id="cb17-8">    melted <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df.melt(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Country'</span>, value_vars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>value_vars, var_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year'</span>, value_name<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>value_name)</span>
+<span id="cb17-9">    melted.year <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> melted.year.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">slice</span>(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4</span>).astype(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">int</span>)</span>
+<span id="cb17-10">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">return</span> melted</span>
+<span id="cb17-11"></span>
+<span id="cb17-12">melted_time_series <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> melt_df_by_var(time_series_data, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'life_exp'</span>, life_exp_year_columns)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb17-13">.merge(melt_df_by_var(time_series_data, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'hdi_index'</span>, hdi_year_columns), on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Country'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year'</span>))<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb17-14">.merge(melt_df_by_var(time_series_data, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'co2'</span>, co2_year_columns), on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Country'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year'</span>))<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">\</span></span>
+<span id="cb17-15">.merge(melt_df_by_var(time_series_data, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'gnipc'</span>, gnipc_year_columns), on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Country'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year'</span>))</span>
+<span id="cb17-16"></span>
+<span id="cb17-17">melted_time_series</span></code></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<div>
+
+
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Country</th>
+<th data-quarto-table-cell-role="th">year</th>
+<th data-quarto-table-cell-role="th">life_exp</th>
+<th data-quarto-table-cell-role="th">hdi_index</th>
+<th data-quarto-table-cell-role="th">co2</th>
+<th data-quarto-table-cell-role="th">gnipc</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Afghanistan</td>
+<td>1990</td>
+<td>45.9672</td>
+<td>0.273</td>
+<td>0.209727</td>
+<td>2684.550019</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Angola</td>
+<td>1990</td>
+<td>41.8933</td>
+<td>NaN</td>
+<td>0.429586</td>
+<td>4845.706901</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Albania</td>
+<td>1990</td>
+<td>73.1439</td>
+<td>0.647</td>
+<td>1.656902</td>
+<td>4742.215529</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Andorra</td>
+<td>1990</td>
+<td>78.4063</td>
+<td>NaN</td>
+<td>7.461153</td>
+<td>43773.146500</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>United Arab Emirates</td>
+<td>1990</td>
+<td>71.9004</td>
+<td>0.728</td>
+<td>28.277672</td>
+<td>102433.136000</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6235</td>
+<td>Samoa</td>
+<td>2021</td>
+<td>72.7675</td>
+<td>0.707</td>
+<td>1.238975</td>
+<td>5307.953374</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6236</td>
+<td>Yemen</td>
+<td>2021</td>
+<td>63.7534</td>
+<td>0.455</td>
+<td>0.327510</td>
+<td>1314.270189</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6237</td>
+<td>South Africa</td>
+<td>2021</td>
+<td>62.3410</td>
+<td>0.713</td>
+<td>7.620420</td>
+<td>12948.373250</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">6238</td>
+<td>Zambia</td>
+<td>2021</td>
+<td>61.2234</td>
+<td>0.565</td>
+<td>0.357535</td>
+<td>3217.767739</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6239</td>
+<td>Zimbabwe</td>
+<td>2021</td>
+<td>59.2531</td>
+<td>0.593</td>
+<td>0.708562</td>
+<td>3809.887158</td>
+</tr>
+</tbody>
+</table>
+
+<p>6240 rows × 6 columns</p>
+</div>
+</div>
+</div>
+<p>Finally writing it to disk</p>
+<div class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1">melted_time_series.to_csv(data_folder<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'processed/time_series.csv'</span>, index<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span></code></pre></div>
+</div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This finalizes our steps to process the data. We’ll do a few more preprocessing steps necessary before modelling in the next chapter. Stay Tuned.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>ml</category>
+  <guid>https://isados.github.io/blog/posts/global_socioecon_indicators/index.html</guid>
+  <pubDate>Mon, 30 Oct 2023 21:00:00 GMT</pubDate>
+  <media:content url="https://isados.github.io/blog/posts/global_socioecon_indicators/pexels-anna-shvets-5217883.jpg" medium="image" type="image/jpeg"/>
+</item>
 <item>
   <title>Bahrain’s Solar &amp; Wind Power Data 2022</title>
   <dc:creator>Isa AlDoseri</dc:creator>
