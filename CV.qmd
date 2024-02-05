@@ -1,6 +1,7 @@
 ---
 toc: true
 toc-location: left
+toc-depth: 2
 comments: false
 ---
 
@@ -12,17 +13,19 @@ Aug 2021 - **Present**, Bahrain
 
 - Roles
     - Spearheading the IT infrastructure of the company and coordinating with stakeholders, to further its growth in the GCC.
-    - Orchestrating & Developing systems on our ERP (Odoo v14), which includes outsourcing most of that development.
-    - Operate as a Full-Stack developer (+ Odoo Developer).
+    - Orchestrating & Developing systems on our ERP internally (Odoo v14), which includes outsourcing most of that development.
+    - Operate as a Full-Stack developer & Odoo Consultant/Developer.
     - Optimizing IT Processes to Achieve Max Efficiency & documenting said processes.
     - Offer Capacity Building & Training on New processes.
 
 - Achievements
+    - Introduced 15 crucial workflow improvements with Odoo modules
     - Increased Sales by reducing orders cancellations with **Instashop by 34%** by building a Real-time Stock API Integration, eliminating merchandisers labor
+    - Created various sales reports, inventory & accounting reports
     - Organized, instructed and developed several data migration projects to ensure smooth transition using **pandas, SQL, and python-odoo modules**. Examples include, our entire inventory and stock valuation, our ecommerce site https://petarabia.com
     - Managed **multiple technical capacity** building session for HR, Accounting, Sales & Inventory Departments in the form of in-person meetings and/or videos.
     - Succeeded in building a Tap-to-Pay system for recurring payments as part of Pet Arabia's Bath Club Membership service using *Flutter & Python-Flask*. First of its kind.
-    - Flutter App for Attendance Tracking.
+    - Developed Flutter App for Attendance Tracking.
 
 
 ### ML Engineer & Associate Business Manager, plantOS
@@ -52,7 +55,7 @@ May 2021 - Jul 2021, Bahrain
 - Roles
     - As a data science/software engineer. Spearheading the ML capabilities for the startup in the field of Cyber Security by leveraging my experience in software development.
 - Achievements
-    - Our team successfully researched & built a prototype intrusion-detection system, within headquarters; using Sci-Kit Learn & Pandas.
+    - Our team successfully researched & built a prototype intrusion-detection system, within headquarters; using Sci-Kit Learn & Pandas. Source-code is confidential.
 
 ### Regional Support Manager (MEA Region), AIESEC International
 Apr 2020 - Jul 2022, MEA (Remote)
@@ -139,7 +142,7 @@ Sep 2012 - Aug 2013, Bahrain
 - Associated with The Hive, Bahrain
 - Successfully built a UI for label recognition on top of a pose estimation algorithm to compete in Mashro3i 2019.
 
-**Remote Control Car with M5Stack Wristwatch** (Jan 2019)
+[**Remote Control Car with M5Stack Wristwatch**](https://github.com/isados/M5Stack-Car) (Jan 2019)
 
 - Associated with The Hive, Bahrain
 - Building a simple remote control kit to educate kids & young adults on the basics of IoT during a workshop at Brinc IoT Building
@@ -149,8 +152,8 @@ Sep 2012 - Aug 2013, Bahrain
 
 - Associated with Acharya Institutes
 - Final year team project on distinguishing forms of breast cancer using Keras; a deep learning framework.
-- Compiled a report on the study, and worked on it while interning at a Data Science startup. (LINK TO REPORT)
-- *Contributors: Sumanth Krishna, Srujana*
+- Compiled a report on the study, and worked on it while interning at a Data Science startup. [LINK TO REPORT](./papers/breast-cancer-paper.pdf)
+- *Contributors: Sumanth Krishna, Srujana, **Isa AlDoseri***
 
 
 **AIESEC EXPA Assistant Tool** (2019)
