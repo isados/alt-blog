@@ -618,7 +618,7 @@ memory usage: 59.7+ KB</code></pre>
 </div>
 </div>
 </div>
-<p>These aren’t countries, rather they are groups that we can look at holistically. We will drop them.</p>
+<p>The <code>NaN</code> values aren’t related to any countries, rather, they are to related to <em>group</em> of countries for brevity. We will drop these rows from the table.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>life_exp_countries <span class="op">=</span> life_exp.dropna(subset<span class="op">=</span><span class="st">'ISO3'</span>, axis<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>life_exp_countries.info()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>

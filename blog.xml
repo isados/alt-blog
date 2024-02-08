@@ -505,7 +505,7 @@ font-style: inherit;">1</span>])</span></code></pre></div>
 </div>
 </div>
 </div>
-<p>These aren’t countries, rather they are groups that we can look at holistically. We will drop them.</p>
+<p>The <code>NaN</code> values aren’t related to any countries, rather, they are to related to <em>group</em> of countries for brevity. We will drop these rows from the table.</p>
 <div class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1">life_exp_countries <span class="op" style="color: #5E5E5E;
 background-color: null;
