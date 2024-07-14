@@ -12,39 +12,39 @@ comments: false
 Aug 2021 - **Present**, Bahrain
 
 - Roles
-    - Spearheading the IT infrastructure of the company and coordinating with stakeholders, to further its growth in the GCC.
-    - Orchestrating & Developing systems on our ERP internally (Odoo v14), which includes outsourcing most of that development.
-    - Operate as a Full-Stack developer & Odoo Consultant/Developer.
-    - Optimizing IT Processes to Achieve Max Efficiency & documenting said processes.
-    - Offer Capacity Building & Training on New processes.
+    - Spearheading the IT infrastructure of the company and coordinating with stakeholders to further its growth in the GCC.
+    - Orchestrating and developing systems on our ERP internally (Odoo v14), which includes outsourcing most of that development.
+    - Operating as a Full-Stack Developer and Odoo Consultant/Developer.
+    - Optimizing IT processes to achieve maximum efficiency and documenting said processes.
+    - Offering capacity building and training on new processes.
 
 - Achievements
-    - Introduced 15 crucial workflow improvements with Odoo modules
+    - Introduced 15 crucial workflow improvements with Odoo modules.
     - Implemented a robust reporting infrastructure using Apache Airflow, AWS, and Apache Superset for data visualization. Designed and managed ETL pipelines with Postgres, delivering actionable business insights to senior management.
-    - Increased Sales by reducing orders cancellations with **Instashop by 34%** by building a Real-time Stock API Integration, eliminating merchandisers labor
-    - Created various sales reports, inventory & accounting reports
-    - Organized, instructed and developed several data migration projects to ensure smooth transition using **pandas, SQL, and python-odoo modules**. Examples include, our entire inventory and stock valuation, our ecommerce site https://petarabia.com
-    - Managed **multiple technical capacity** building session for HR, Accounting, Sales & Inventory Departments in the form of in-person meetings and/or videos.
-    - Succeeded in building a Tap-to-Pay system for recurring payments as part of Pet Arabia's Bath Club Membership service using *Flutter & Python-Flask*. First of its kind.
-    - Developed Flutter App for Attendance Tracking.
+    - Increased sales by reducing order cancellations with **Instashop by 34%** by building a real-time stock API integration, eliminating the need for merchandisers' labor.
+    - Created various sales reports, inventory reports, and accounting reports.
+    - Organized, instructed, and developed several data migration projects to ensure smooth transitions using **pandas, SQL, and python-odoo modules**. Examples include our entire inventory and stock valuation and our eCommerce site https://petarabia.com.
+    - Managed **multiple technical capacity** building sessions for HR, Accounting, Sales, and Inventory departments in the form of in-person meetings and/or videos.
+    - Succeeded in building a Tap-to-Pay system for recurring payments as part of Pet Arabia's Bath Club Membership service using *Flutter and Python-Flask*. First of its kind.
+    - Developed a Flutter app for attendance tracking.
 
 
 ### ML Engineer & Associate Business Manager, plantOS
 Oct 2019 - **Present**, Malaysia (Remote) & Bahrain
 
 - Roles
-    - Developing ML algorithms to derive insights on accelerating yield for farmers, and eliminating diseases that plague them.
-    - Growing the agri-tech business in the GCC by securing sales meetings in&out of Bahrain, to build a strong base for the company.
+    - Developing ML algorithms to derive insights on accelerating yield for farmers and eliminating diseases that plague them.
+    - Growing the agri-tech business in the GCC by securing sales meetings in and out of Bahrain to build a strong base for the company.
 - Achievements
     - Incorporated an experimental version of the yield prediction algorithm as part of the plantOS application using **Sci-Kit Learn**.
-    - Developed Fruit Object Detection algorithm using **PyTorch (Fast Mask-RCNN model used)** to showcase to the Ministry of Agriculture in Malaysia.
+    - Developed a Fruit Object Detection algorithm using **PyTorch (Fast Mask-RCNN model used)** to showcase to the Ministry of Agriculture in Malaysia.
 
 ### AI Instructor, Go My Code
 Mar 2021 - Feb 2022, Bahrain (Hybrid & Part-Time)
 
 - Roles
-    - Act as part-time coach & influencer to individuals interested in switching to a Data Science career, by having them go through a 3-month program and shipping a product by the end of it.
-    - Each batch runs for a minimum 3 months
+    - Act as a part-time coach and influencer to individuals interested in switching to a Data Science career, by having them go through a 3-month program and shipping a product by the end of it.
+    - Each batch runs for a minimum of 3 months.
 - Achievements
     - Successfully ran 3 batches back-to-back with a total of 8 students.
     - Secured 7 successful capstone data-science projects with the students.
