@@ -54,20 +54,20 @@ Mar 2021 - Feb 2022, Bahrain (Hybrid & Part-Time)
 May 2021 - Jul 2021, Bahrain
 
 - Roles
-    - As a data science/software engineer. Spearheading the ML capabilities for the startup in the field of Cyber Security by leveraging my experience in software development.
+    - As a data science/software engineer, spearheading the ML capabilities for the startup in the field of Cyber Security by leveraging my experience in software development.
 - Achievements
-    - Our team successfully researched & built a prototype intrusion-detection system, within headquarters; using Sci-Kit Learn & Pandas. Source-code is confidential.
+    - Our team successfully researched and built a prototype intrusion-detection system within headquarters using Sci-Kit Learn and Pandas. Source-code is confidential.
 
 ### Regional Support Manager (MEA Region), AIESEC International
 Apr 2020 - Jul 2022, MEA (Remote)
 
-- Developed & maintained dashboards & data structures with the Regional Team of AIESEC International; to track performance growth for members in 28 countries; concretely & transparently.
+- Developed and maintained dashboards and data structures with the Regional Team of AIESEC International to track performance growth for members in 28 countries, concretely and transparently.
 - Coached Vice Presidents and Team Leaders on the use of the dashboard tool.
 
 ### National Support Manager | Information Management, AIESEC in Bahrain
 Apr 2020 - Jan 2021, Bahrain
 
-- Developed dashboards & data structures with the National Team of AIESEC in Bahrain to track performance and potential growth of the whole entity more transparently.
+- Developed dashboards and data structures with the National Team of AIESEC in Bahrain to track performance and potential growth of the whole entity more transparently.
 - Coached Vice Presidents and Team Leaders on the use of our data management tools.
 
 
@@ -75,11 +75,11 @@ Apr 2020 - Jan 2021, Bahrain
 Feb 2020 - Jan 2021, Bahrain
 
 - Roles
-    - VP of a local chapter for AIESEC in Bahrain. Leading a department to create projects that deliver social impact in the country under the United Nations Sustainable Development Goals.
+    - VP of a local chapter for AIESEC in Bahrain, leading a department to create projects that deliver social impact in the country under the United Nations Sustainable Development Goals.
 
 - Achievements
-    - Executed 10 social impact projects from start to finish. Drove measurable impact towards the United Nations Sustainable Development Goals.
-    - Coached a total of 6 team leaders on project management & leadership skills. These team leaders in turn coached their teams to realize these social projects.
+    - Executed 10 social impact projects from start to finish, driving measurable impact towards the United Nations Sustainable Development Goals.
+    - Coached a total of 6 team leaders on project management and leadership skills. These team leaders, in turn, coached their teams to realize these social projects.
     - Facilitated various local/national chapter conferences with my executive board team.
     - Collaborated with multiple stakeholders as partners.
 
@@ -87,7 +87,7 @@ Feb 2020 - Jan 2021, Bahrain
 ### Team Leader | Incoming Global Exchange Program, AIESEC in Bahrain
 Feb 2019 - Feb 2020, Bahrain
 
-- Managed teams within the Global Exchange products to connect a group of diverse & talented individuals from around the globe with startups & NGOs in the Kingdom of Bahrain to take on internships, and offering them life-changing experiences in the process.
+- Managed teams within the Global Exchange products to connect a group of diverse and talented individuals from around the globe with startups and NGOs in the Kingdom of Bahrain to take on internships, offering them life-changing experiences in the process.
 
 ### Game Instructor, Cleverplay
 May 2019 - Jun 2019, Bahrain (Part-time)
@@ -99,12 +99,11 @@ Nov 2018 - Feb 2019, Bahrain
 
 - Roles
     - Worked as a Software Developer.
-    - A tutor; manage workshops and tutorials
+    - Tutored workshops and managed tutorials.
 - Achievements
-    - Managed and developed tutorials on Basic Electronics and Computers aimed at kids and young adults. 
-    - Further developed a motion tracking software using pose estimation for clients to
-    compete in **Mashro3i 2019**.
-    - Conducted a Basic Computer workshop for a primary school in Karzakan, Bahrain
+    - Managed and developed tutorials on Basic Electronics and Computers aimed at kids and young adults.
+    - Further developed motion tracking software using pose estimation for clients to compete in **Mashro3i 2019**.
+    - Conducted a Basic Computer workshop for a primary school in Karzakan, Bahrain.
 
 ## Internships
 ### Machine Learning Intern, Suprath Technologies
@@ -119,10 +118,10 @@ Jan 2018 - May 2018, Bangalore, India
 Aug 2014 - Jul 2018, Bangalore, India
 
 - Graduated with First Class Honors (Distinction).
-- Final Year Project on Breast Cancer Detection. Researched on Convolutional Neural Networks, and implemented one using the Keras API, to distinguish between different breast cancers.
+- Final Year Project on Breast Cancer Detection. Researched Convolutional Neural Networks and implemented one using the Keras API to distinguish between different breast cancers.
 - Extracurricular
-    - Member of Nature Watch (2016-Present) : An eco-club based off campus
-    - Voracious Quizzer, won 1st and 2nd place in multiple competitions across Bangalore City
+    - Member of Nature Watch (2016-Present): An eco-club based off campus.
+    - Voracious Quizzer, won 1st and 2nd place in multiple competitions across Bangalore City.
 
 
 ### Cambridge AS & A-Levels, Al Noor International School
@@ -130,42 +129,42 @@ Sep 2012 - Aug 2013, Bahrain
 
 - Studied Physics, Math & Computer Science.
 - GPA 3.1 
-- Built an invoicing system for a laundry shop using VB.NET as part of my final year
+- Built an invoicing system for a laundry shop using VB.NET as part of my final year.
 
 ## Technical Projects
 
 **[*Personal Blog*](http://isados.github.io.com/blog/blog)** (2019-present)
 
-- Authored a series of articles covering a variety of topics and tools related to Data Science (and pop-culture!)
+- Authored a series of articles covering a variety of topics and tools related to Data Science (and pop-culture!).
 
 [**Realtime 2D Pose Estimation GUI with OpenPose**](https://github.com/isados/openpose-gui) (Feb 2019)
 
-- Associated with The Hive, Bahrain
+- Associated with The Hive, Bahrain.
 - Successfully built a UI for label recognition on top of a pose estimation algorithm to compete in Mashro3i 2019.
 
 [**Remote Control Car with M5Stack Wristwatch**](https://github.com/isados/M5Stack-Car) (Jan 2019)
 
-- Associated with The Hive, Bahrain
-- Building a simple remote control kit to educate kids & young adults on the basics of IoT during a workshop at Brinc IoT Building
+- Associated with The Hive, Bahrain.
+- Building a simple remote control kit to educate kids and young adults on the basics of IoT during a workshop at Brinc IoT Building.
 
 
 [**Breast Cancer Screening using Keras**](https://github.com/isados/breast-cancer-screening) (Jan 2018 - Jun 2018)
 
-- Associated with Acharya Institutes
+- Associated with Acharya Institutes.
 - Final year team project on distinguishing forms of breast cancer using Keras; a deep learning framework.
-- Compiled a report on the study, and worked on it while interning at a Data Science startup. [LINK TO REPORT](./papers/breast-cancer-paper.pdf)
+- Compiled a report on the study and worked on it while interning at a Data Science startup. [LINK TO REPORT](./papers/breast-cancer-paper.pdf)
 - *Contributors: Sumanth Krishna, Srujana, **Isa AlDoseri***
 
 
 **AIESEC EXPA Assistant Tool** (2019)
 
-- Associated with AIESEC in Bahrain
+- Associated with AIESEC in Bahrain.
 - Developed an automation tool using Python Selenium to scrap data from the AIESEC Management Site to update our CRM workspace.
 
 ## Social Projects
-[**AIESEC in Bahrain : Ebtikar**](https://www.instagram.com/p/CDd9O-4gu-9/) (Jul 2020 - Aug 2020)
+[**AIESEC in Bahrain: Ebtikar**](https://www.instagram.com/p/CDd9O-4gu-9/) (Jul 2020 - Aug 2020)
 
-- Associated with AIESEC in Bahrain
+- Associated with AIESEC in Bahrain.
 - Under The Patronage of H.E. the President of Sustainable Energy Authority, Ebtikar is a program where participants prepare, compete (in teams) and learn more about renewable energy and climate change. And they do so in teams where they will compete for the best idea.
 
 ## Licenses & Certifications
