@@ -172,7 +172,9 @@ Sep 2012 - Aug 2013, Bahrain
 ::: {.morelinespace}
 - IBM Data Science Professional Certificate | Coursera | Issued Aug 2021
 - Tableau Essential Training (2020.1) | LinkedIn Learning ⋅ Course Certificate | Issued Jan 2021
+[Original Source](https://www.linkedin.com/learning/certificates/0bd5351947dd06c7c13414ab70419c868d6961cb0688101909242b440f6a99e1)
 - Cisco Certified Network Associate Routing and Switching (CCNA) | Cisco | Issued Oct 2020 · Expires Oct 2023
+- [ChatGPT Prompt Engineering for Developers | DeepLearning.AI |  Issued Jun 2024](https://learn.deeplearning.ai/accomplishments/2fb9171a-6d32-43ec-97de-3558b58d2d96?usp=sharing)
 :::
 
 :::
