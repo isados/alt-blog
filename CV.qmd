@@ -20,6 +20,7 @@ Aug 2021 - **Present**, Bahrain
 
 - Achievements
     - Introduced 15 crucial workflow improvements with Odoo modules
+    - Implemented a robust reporting infrastructure using Apache Airflow, AWS, and Apache Superset for data visualization. Designed and managed ETL pipelines with Postgres, delivering actionable business insights to senior management.
     - Increased Sales by reducing orders cancellations with **Instashop by 34%** by building a Real-time Stock API Integration, eliminating merchandisers labor
     - Created various sales reports, inventory & accounting reports
     - Organized, instructed and developed several data migration projects to ensure smooth transition using **pandas, SQL, and python-odoo modules**. Examples include, our entire inventory and stock valuation, our ecommerce site https://petarabia.com
