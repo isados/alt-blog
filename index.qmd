@@ -16,6 +16,9 @@ about:
       href: blog/blog.html
     - text: Resume
       href: blog/resume.pdf
+    - text: Stackoverflow
+      icon: stack-overflow
+      url: https://stackoverflow.com/users/2219379/isados
 comments: false
 ---
 ::: {.column-page}
