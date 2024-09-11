@@ -12,13 +12,13 @@ about:
       url: "https://github.com/isados"
     - text: Email
       url: "mailto:isadosry+site@gmail.com"
-    - text: Blog
-      href: blog/blog.html
-    - text: Resume
-      href: blog/resume.pdf
     - text: Stackoverflow
       icon: stack-overflow
       url: https://stackoverflow.com/users/2219379/isados
+    - text: Blog
+      href: blog.html
+    - text: Resume
+      href: blog/resume.pdf
 comments: false
 ---
 ::: {.column-page}
