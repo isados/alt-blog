@@ -15,10 +15,8 @@ website:
     utterances:
       repo: isados/blog
   navbar:
-    # background: "#A7D5E8"
+    background: "#192bc2"
     right:
-      - text: "About Me"
-        href: index.html
       - text: "Blog"
         href: blog.html
       - text: "Experience"
@@ -32,9 +30,14 @@ website:
       - icon: rss
         href: blog.xml
   page-footer:
-    left: "© Copyright 2023 Isa AlDoseri. Except where otherwise noted, all text and images licensed CC-BY-NC 4.0."
+    center: "© Copyright 2023 Isa AlDoseri. Except where otherwise noted, all text and images licensed CC-BY-NC 4.0."
 format:
   html:
-    theme: [sandstone, _variables.scss]
-    css: styles.css
+    theme:
+      light: [cosmo, custom.scss]
+      # dark: [darkly, _variables.scss]
+    # css: styles.css
+    highlight-style: eiffel
+    smooth-scroll: true
+
     # mainfont: "Atkinson Hyperlegible"
