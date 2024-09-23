@@ -162,10 +162,11 @@ Sep 2012 - Aug 2013, Bahrain
 - Developed an automation tool using Python Selenium to scrap data from the AIESEC Management Site to update our CRM workspace.
 
 ## Social Projects
-[**AIESEC in Bahrain: Ebtikar**](https://www.instagram.com/p/CDd9O-4gu-9/) (Jul 2020 - Aug 2020)
+**AIESEC in Bahrain: Ebtikar** (Jul 2020 - Aug 2020)
 
 - Associated with AIESEC in Bahrain.
 - Under The Patronage of H.E. the President of Sustainable Energy Authority, Ebtikar is a program where participants prepare, compete (in teams) and learn more about renewable energy and climate change. And they do so in teams where they will compete for the best idea.
+- [Instagram Post](https://www.instagram.com/p/CDd9O-4gu-9/) & [News Article](https://www.newsofbahrain.com/bahrain/65260.html)
 
 ## Licenses & Certifications
 
